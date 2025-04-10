@@ -20,4 +20,7 @@ public class Sessions {
     private int id;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+
+    // has create relationships
+
 }
