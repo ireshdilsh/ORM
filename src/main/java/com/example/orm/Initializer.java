@@ -7,12 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Random;
-import java.util.Scanner;
-
 
 public class Initializer extends Application {
-
 
     @Override
     public void start(Stage stage) throws IOException {
