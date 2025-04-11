@@ -33,7 +33,7 @@ public class AdminController {
     }
 
     @FXML
-    void saveAdmin(ActionEvent event) {
+    void saveAdmin(ActionEvent event) throws Exception {
         boolean resp = adminService.saveAdmin(new AdminDto(
             nameTxt.getText(),emailTxt.getText(),paddwordTxt.getText(),Integer.parseInt(contactTxt.getText())
         ));

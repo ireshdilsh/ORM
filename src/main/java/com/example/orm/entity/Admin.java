@@ -18,4 +18,11 @@ public class Admin {
     private String email;
     private String password;
     private int contact;
+
+    public Admin(String name, String email, String password, int contact) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.contact = contact;
+    }
 }
