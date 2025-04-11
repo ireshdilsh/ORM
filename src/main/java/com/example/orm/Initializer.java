@@ -16,15 +16,11 @@ public class Initializer extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/Landing.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/AdminView.fxml"));
         stage.setScene(new Scene(root));
         stage.show();
     }
     public static void main(String[] args) {
-
-        Session session = FactoryConfiguration.getFactoryConfiguration().getSessionFactory();
-        System.out.println(session);
-
         launch();
     }
 }
