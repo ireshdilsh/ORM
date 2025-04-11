@@ -4,19 +4,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "programme")
+@Entity(name = "payment")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Programme {
+public class Payment {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
-    private String duration;
-    private Double fees;
+    private Double amout;
+
+    @ManyToOne
+    @JoinColumn
+    private Patcients patcients;
 }
