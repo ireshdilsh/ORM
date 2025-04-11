@@ -8,15 +8,23 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import org.hibernate.Session;
+
+import com.example.orm.config.FactoryConfiguration;
+
 public class Initializer extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(""));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/Landing.fxml"));
         stage.setScene(new Scene(root));
         stage.show();
     }
     public static void main(String[] args) {
+
+        Session session = FactoryConfiguration.getFactoryConfiguration().getSessionFactory();
+        System.out.println(session);
+
         launch();
     }
 }

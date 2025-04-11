@@ -25,6 +25,4 @@ public class Sessions {
     @ManyToOne
     @JoinColumn
     private Therepists therepists;
-
-    // has create relationships
 }

@@ -18,5 +18,5 @@ public class Programme {
     private int id;
     private String name;
     private String duration;
-    private Double fees;
+    private double fees;
 }
