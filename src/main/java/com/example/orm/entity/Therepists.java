@@ -19,6 +19,5 @@ public class Therepists {
     private String name;
     private String email;
     private int phone;
-
     // has add relationships
 }

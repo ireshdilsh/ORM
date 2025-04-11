@@ -22,5 +22,4 @@ public class Sessions {
     private LocalDateTime updatedAt;
 
     // has create relationships
-
 }
