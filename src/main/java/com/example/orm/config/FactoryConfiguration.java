@@ -15,6 +15,7 @@ import org.hibernate.cfg.Configuration;
 public class FactoryConfiguration {
     private static FactoryConfiguration factoryConfiguration;
     private final SessionFactory sessionFactory;
+
     private FactoryConfiguration() {
         Configuration config = new Configuration();
         config.configure();
