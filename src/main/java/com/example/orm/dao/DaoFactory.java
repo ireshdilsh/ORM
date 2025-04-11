@@ -1,5 +1,7 @@
 package com.example.orm.dao;
 
+import com.example.orm.dao.custom.impl.AdminDaoImpl;
+
 public class DaoFactory {
     private static DaoFactory daoFactory;
 
@@ -12,7 +14,7 @@ public class DaoFactory {
     public SuperDao getDao(daoType type){
         switch (type) {
             case ADMIN:
-                return null;
+                return new AdminDaoImpl();
         
             default:
                 return null;
