@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.orm.controller.ProgrammeController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="539.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.ProgrammeController">
+   <children>
+      <TextField fx:id="nameTxt" layoutX="111.0" layoutY="106.0" prefHeight="47.0" prefWidth="269.0" promptText="Name" />
+      <TextField fx:id="durationTxt" layoutX="111.0" layoutY="165.0" prefHeight="47.0" prefWidth="269.0" promptText="Duration " />
+      <TextField fx:id="feesTxt" layoutX="111.0" layoutY="222.0" prefHeight="47.0" prefWidth="269.0" promptText="Fees" />
+      <TableView fx:id="programmeTbl" layoutX="46.0" layoutY="296.0" prefHeight="200.0" prefWidth="686.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="programmenameCol" prefWidth="325.5999984741211" text="Programme Name" />
+            <TableColumn fx:id="durationCol" prefWidth="153.60000610351562" text="Duration" />
+            <TableColumn fx:id="feesCol" prefWidth="135.199951171875" text="Fees" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="savebtn" layoutX="463.0" layoutY="58.0" onAction="#saveProgramme" prefHeight="47.0" prefWidth="190.0" text="Save" />
+      <JFXButton fx:id="updateBtn" layoutX="473.0" layoutY="141.0" onAction="#updateProgramme" prefHeight="47.0" prefWidth="190.0" text="Update" />
+      <JFXButton fx:id="deleteBtn" layoutX="473.0" layoutY="212.0" onAction="#deleteProgramme" prefHeight="47.0" prefWidth="190.0" text="Delete" />
+   </children>
 </AnchorPane>
