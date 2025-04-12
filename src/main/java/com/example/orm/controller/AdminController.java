@@ -15,7 +15,7 @@ public class AdminController {
 
     AdminService adminService = (AdminService) ServiceFactory.getServiceFactory().getService(serviceType.ADMIN);
 
-      @FXML
+    @FXML
     private TextField contactTxt;
 
     @FXML
@@ -35,13 +35,12 @@ public class AdminController {
     @FXML
     void saveAdmin(ActionEvent event) throws Exception {
         boolean resp = adminService.saveAdmin(new AdminDto(
-            nameTxt.getText(),emailTxt.getText(),paddwordTxt.getText(),Integer.parseInt(contactTxt.getText())
-        ));
+                nameTxt.getText(), emailTxt.getText(), paddwordTxt.getText(), Integer.parseInt(contactTxt.getText())));
 
         if (resp) {
-            new Alert(AlertType.INFORMATION,"New Admin Added Success!").show();
+            new Alert(AlertType.INFORMATION, "New Admin Added Success!").show();
         } else {
-            new Alert(AlertType.ERROR,"Something Went Wrong!").show();
+            new Alert(AlertType.ERROR, "Something Went Wrong!").show();
         }
     }
 
