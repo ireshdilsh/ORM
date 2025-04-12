@@ -1,5 +1,8 @@
 package com.example.orm.dao.custom.impl;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -29,6 +32,36 @@ public class AdminDaoImpl implements AdminDao {
                 session.close();
             }
         }
+    }
+
+    @Override
+    public boolean update(Admin t) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
+    }
+
+    @Override
+    public boolean deleteByPK(int id) throws Exception {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deleteByPK'");
+    }
+
+    @Override
+    public List<Admin> getAll() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAll'");
+    }
+
+    @Override
+    public Optional<Admin> findByPK(int id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findByPK'");
+    }
+
+    @Override
+    public Optional<String> getLastPK() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getLastPK'");
     }
 
 }
