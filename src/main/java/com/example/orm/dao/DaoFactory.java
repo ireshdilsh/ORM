@@ -1,6 +1,7 @@
 package com.example.orm.dao;
 
 import com.example.orm.dao.custom.impl.AdminDaoImpl;
+import com.example.orm.dao.custom.impl.RicieptionDaoImpl;
 
 public class DaoFactory {
     private static DaoFactory daoFactory;
@@ -15,13 +16,14 @@ public class DaoFactory {
         switch (type) {
             case ADMIN:
                 return new AdminDaoImpl();
-        
+            case RICIEPTION:
+                return new RicieptionDaoImpl();
             default:
                 return null;
         }
     }
 
     public enum daoType{
-        ADMIN
+        ADMIN,RICIEPTION
     }
 }
