@@ -19,4 +19,10 @@ public class Programme {
     private String name;
     private String duration;
     private double fees;
+    
+    public Programme(String name, String duration, double fees) {
+        this.name = name;
+        this.duration = duration;
+        this.fees = fees;
+    }
 }
