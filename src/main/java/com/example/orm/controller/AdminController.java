@@ -29,7 +29,7 @@ public class AdminController {
 
     @FXML
     void deleteAdmin(ActionEvent event) {
-
+        
     }
 
     @FXML
