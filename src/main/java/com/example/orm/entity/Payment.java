@@ -21,6 +21,6 @@ public class Payment {
     private Double amout;
 
     @ManyToOne
-    @JoinColumn
-    private Patcients patcients;
+    @JoinColumn(name = "pat_Id")
+    private Patcients patcient;
 }

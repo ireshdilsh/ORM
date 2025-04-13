@@ -19,4 +19,10 @@ public class Therepists {
     private String name;
     private String email;
     private int phone;
+    
+    public Therepists(String name, String email, int phone) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
 }

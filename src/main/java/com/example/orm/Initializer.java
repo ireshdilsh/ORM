@@ -11,9 +11,9 @@ public class Initializer extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/ProgrammeView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/TherepistView.fxml"));
         stage.setScene(new Scene(root));
-        stage.setTitle("PROGRAMME");
+        stage.setTitle("THEREPIST");
         stage.show();
     }
     public static void main(String[] args) {

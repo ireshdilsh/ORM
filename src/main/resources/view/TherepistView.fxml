@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.TherepsiController">
+   <children>
+      <JFXButton fx:id="saveBtn" layoutX="524.0" layoutY="72.0" onAction="#saveTherepist" prefHeight="40.0" prefWidth="174.0" text="save" />
+      <JFXButton fx:id="updateBtn" layoutX="532.0" layoutY="122.0" onAction="#updateTherepist" prefHeight="40.0" prefWidth="174.0" text="Update" />
+      <JFXButton fx:id="deleteBtn" layoutX="545.0" layoutY="184.0" onAction="#deleteTherepist" prefHeight="40.0" prefWidth="174.0" text="Delete" />
+      <Label fx:id="idLbl" layoutX="117.0" layoutY="64.0" prefHeight="33.0" prefWidth="135.0" text="Label" />
+      <TextField fx:id="nameTxt" layoutX="108.0" layoutY="112.0" prefHeight="40.0" prefWidth="288.0" promptText="Name" />
+      <TextField fx:id="emailTxt" layoutX="117.0" layoutY="164.0" prefHeight="40.0" prefWidth="288.0" promptText="email" />
+      <TextField fx:id="contactTxt" layoutX="125.0" layoutY="224.0" prefHeight="40.0" prefWidth="288.0" promptText="contact" />
+      <TableView fx:id="threTbl" layoutX="51.0" layoutY="292.0" onMouseClicked="#searchTherepist" prefHeight="200.0" prefWidth="724.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nameCol" prefWidth="227.1999969482422" text="Name" />
+            <TableColumn fx:id="emailCol" prefWidth="280.79998779296875" text="Email" />
+            <TableColumn fx:id="contactCol" prefWidth="139.99993896484375" text="Contact" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
