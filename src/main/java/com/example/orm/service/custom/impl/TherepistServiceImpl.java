@@ -62,4 +62,5 @@ public class TherepistServiceImpl implements TherepisService{
         return therepistDao.deleteByPK(int1);
     }
 
+
 }

@@ -14,6 +14,7 @@ public class TherepistTM {
     private String name;
     private String email;
     private int phone;
+  
     public TherepistTM(String name) {
         this.name = name;
     }

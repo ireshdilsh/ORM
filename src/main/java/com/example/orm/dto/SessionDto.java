@@ -14,9 +14,6 @@ public class SessionDto {
     private int end;
     private TherepistDto therepistId;
     
-    public SessionDto(int id) {
-        this.id = id;
-    }
     public SessionDto(String name, int start, int end, TherepistDto therepistId) {
         this.name = name;
         this.start = start;

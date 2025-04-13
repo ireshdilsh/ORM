@@ -19,11 +19,7 @@ public class TherepistDto {
         this.phone = phone;
     }
 
-    public TherepistDto(int id) {
-        this.id = id;
-    }
-
-    public TherepistDto(String name2) {
-        //TODO Auto-generated constructor stub
+    public TherepistDto(String name) {
+        this.name = name;
     }
 }

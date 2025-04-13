@@ -9,10 +9,7 @@ import com.example.orm.service.ServiceFactory;
 import com.example.orm.service.ServiceFactory.serviceType;
 import com.example.orm.service.custom.SessionService;
 import com.example.orm.service.custom.TherepisService;
-import com.example.orm.tm.TherepistTM;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -24,27 +21,18 @@ public class SessionController implements Initializable{
     TherepisService therepisService = (TherepisService) ServiceFactory.getServiceFactory().getService(serviceType.THEREPIST);
 
     @FXML
-    private ComboBox<TherepistTM> therepistCmb;
+    private ComboBox<String> therepistCmb;
 
     @FXML
     void selectTherepist(ActionEvent event) {
-        TherepistTM therepistTM = therepistCmb.getSelectionModel().getSelectedItem();
-        if (therepistTM != null) {
-            System.out.println(therepistTM.getId());
+        String name = therepistCmb.getSelectionModel().getSelectedItem();
+        if (name != null) {
+            //System.out.println(therepistTM.getId());
         }
     }
 
     public void getAllTherepistNames(){
-        ArrayList<TherepistDto>therepistDtos = therepisService.getAllTherepists();
-        ObservableList<TherepistTM>therepistTMs = FXCollections.observableArrayList();
-
-        for (TherepistDto dto : therepistDtos) {
-            TherepistTM therepistTM = new TherepistTM(
-                dto.getName()
-            );
-            therepistTMs.add(therepistTM);
-        }
-        therepistCmb.setItems(therepistTMs);
+        
     }
 
     @Override
