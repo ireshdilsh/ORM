@@ -18,5 +18,8 @@ public class TherepistDto {
         this.email = email;
         this.phone = phone;
     }
-    
+
+    public TherepistDto(int id) {
+        this.id = id;
+    }
 }

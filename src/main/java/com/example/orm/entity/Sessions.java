@@ -19,10 +19,10 @@ public class Sessions {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private String start;
-    private String end;
+    private int start;
+    private int end;
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "therepist_ID")
     private Therepists therepists;
 }
