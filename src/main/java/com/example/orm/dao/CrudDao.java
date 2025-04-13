@@ -8,6 +8,6 @@ public interface CrudDao <T> extends SuperDao{
     boolean update(T t);
     boolean deleteByPK(int id) throws Exception;
     List<T> getAll();
-    Optional<T> findByPK(int id);
+    T findByPK(int id);
     Optional<String> getLastPK();
 }

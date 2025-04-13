@@ -1,19 +1,20 @@
-package com.example.orm.dto;
+package com.example.orm.tm;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class ProgrammeDto {
+@Getter
+@Setter
+public class ProgrammeTM {
     private int id;
     private String name;
     private String duration;
     private double fees;
-    
-    public ProgrammeDto(String name, String duration, double fees) {
+    public ProgrammeTM(String name, String duration, double fees) {
         this.name = name;
         this.duration = duration;
         this.fees = fees;

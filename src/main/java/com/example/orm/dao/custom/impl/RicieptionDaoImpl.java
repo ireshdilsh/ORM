@@ -47,15 +47,16 @@ public class RicieptionDaoImpl implements RicieptionDao{
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getAll'");
     }
-    @Override
-    public Optional<Ricieption> findByPK(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findByPK'");
-    }
+
     @Override
     public Optional<String> getLastPK() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getLastPK'");
+    }
+    @Override
+    public Ricieption findByPK(int id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findByPK'");
     }
 
 }

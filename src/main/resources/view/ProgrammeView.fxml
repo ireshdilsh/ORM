@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="539.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.ProgrammeController">
    <children>
@@ -23,5 +23,7 @@
       <JFXButton fx:id="savebtn" layoutX="463.0" layoutY="58.0" onAction="#saveProgramme" prefHeight="47.0" prefWidth="190.0" text="Save" />
       <JFXButton fx:id="updateBtn" layoutX="473.0" layoutY="141.0" onAction="#updateProgramme" prefHeight="47.0" prefWidth="190.0" text="Update" />
       <JFXButton fx:id="deleteBtn" layoutX="473.0" layoutY="212.0" onAction="#deleteProgramme" prefHeight="47.0" prefWidth="190.0" text="Delete" />
+      <Label layoutX="-60.0" layoutY="-58.0" text="Label" />
+      <Label fx:id="idLbl" layoutX="111.0" layoutY="58.0" prefHeight="28.0" prefWidth="86.0" text="Label" />
    </children>
 </AnchorPane>

@@ -11,6 +11,7 @@ module com.example.orm {
     opens com.example.orm.config to jakarta.persistence;
     opens com.example.orm.entity to org.hibernate.orm.core;
     opens com.example.orm.controller to javafx.fxml;
+    opens com.example.orm.tm to javafx.base;
     opens com.example.orm.dto to javafx.base;
 
     exports com.example.orm;

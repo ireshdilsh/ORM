@@ -1,6 +1,7 @@
 package com.example.orm.service;
 
 import com.example.orm.service.custom.impl.AdminServiceImpl;
+import com.example.orm.service.custom.impl.ProgrammeServiceImpl;
 import com.example.orm.service.custom.impl.RicieptionServiceImpl;
 
 public class ServiceFactory {
@@ -18,12 +19,14 @@ public class ServiceFactory {
                 return new AdminServiceImpl();
             case RICIEPTION:
                 return new RicieptionServiceImpl();
+            case PROGRAMME:
+                return new ProgrammeServiceImpl();
             default:
                 return null;
         }
     }
 
     public enum serviceType{
-        ADMIN,RICIEPTION
+        ADMIN,RICIEPTION,PROGRAMME
     }
 }
