@@ -61,5 +61,5 @@ public class TherepistServiceImpl implements TherepisService{
     public boolean deleteTherepist(int int1) throws Exception {
         return therepistDao.deleteByPK(int1);
     }
-    
+
 }

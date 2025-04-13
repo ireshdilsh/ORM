@@ -3,6 +3,7 @@ package com.example.orm.service;
 import com.example.orm.service.custom.impl.AdminServiceImpl;
 import com.example.orm.service.custom.impl.ProgrammeServiceImpl;
 import com.example.orm.service.custom.impl.RicieptionServiceImpl;
+import com.example.orm.service.custom.impl.SessionServiceImpl;
 import com.example.orm.service.custom.impl.TherepistServiceImpl;
 
 public class ServiceFactory {
@@ -24,12 +25,14 @@ public class ServiceFactory {
                 return new ProgrammeServiceImpl();
             case THEREPIST:
                 return new TherepistServiceImpl();
+            case SESSIONS:
+                return new SessionServiceImpl();
             default:
                 return null;
         }
     }
 
     public enum serviceType{
-        ADMIN,RICIEPTION,PROGRAMME,THEREPIST
+        ADMIN,RICIEPTION,PROGRAMME,THEREPIST,SESSIONS
     }
 }

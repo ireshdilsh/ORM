@@ -22,4 +22,8 @@ public class TherepistDto {
     public TherepistDto(int id) {
         this.id = id;
     }
+
+    public TherepistDto(String name2) {
+        //TODO Auto-generated constructor stub
+    }
 }
