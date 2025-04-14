@@ -40,14 +40,14 @@ public class SessionServiceImpl implements SessionService{
     @Override
     public boolean saveSession(SessionDto sessionDto) throws Exception{
 
-        Therepists therepistDto = therepistDao.findByPK(sessionDto.getTherepistId());
+        Therepists therepist = therepistDao.findByPK(sessionDto.getTherepistId());
 
         return sessionDao.save(new Sessions(
                 sessionDto.getId(),
                 sessionDto.getName(),
                 sessionDto.getStart(),
                 sessionDto.getEnd(),
-                therepistDto
+                therepist
         ));
     }
 

@@ -23,12 +23,14 @@ public class DaoFactory {
                 return new TherepistDaoImpl();
                 case SESSIONS:
                     return new SessionDaoImpl();
+            case PATCIENT:
+                return new PatcientDaoImpl();
             default:
                 return null;
         }
     }
 
     public enum daoType{
-        ADMIN,RICIEPTION,PROGRAMME,THEREPIST,SESSIONS
+        ADMIN,RICIEPTION,PROGRAMME,THEREPIST,SESSIONS,PATCIENT
     }
 }

@@ -1,10 +1,6 @@
 package com.example.orm.service;
 
-import com.example.orm.service.custom.impl.AdminServiceImpl;
-import com.example.orm.service.custom.impl.ProgrammeServiceImpl;
-import com.example.orm.service.custom.impl.RicieptionServiceImpl;
-import com.example.orm.service.custom.impl.SessionServiceImpl;
-import com.example.orm.service.custom.impl.TherepistServiceImpl;
+import com.example.orm.service.custom.impl.*;
 
 public class ServiceFactory {
     private static ServiceFactory serviceFactory;
@@ -27,12 +23,14 @@ public class ServiceFactory {
                 return new TherepistServiceImpl();
             case SESSIONS:
                 return new SessionServiceImpl();
+            case PATCIENT:
+                return new PatcientServiceImpl();
             default:
                 return null;
         }
     }
 
     public enum serviceType{
-        ADMIN,RICIEPTION,PROGRAMME,THEREPIST,SESSIONS
+        ADMIN,RICIEPTION,PROGRAMME,THEREPIST,SESSIONS,PATCIENT
     }
 }

@@ -1,12 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="563.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.PattcientController">
    <children>
-      <ComboBox fx:id="programmeCmb" layoutX="33.0" layoutY="43.0" onAction="#selectProgramme" prefWidth="150.0" promptText="select Programme" />
-      <ComboBox fx:id="sesssonCmb" layoutX="222.0" layoutY="43.0" onAction="#selectSession" prefWidth="150.0" promptText="select Session" />
+      <ComboBox fx:id="programmeCmb" layoutX="33.0" layoutY="73.0" onAction="#selectProgramme" prefWidth="150.0" promptText="select Programme" />
+      <ComboBox fx:id="sesssonCmb" layoutX="222.0" layoutY="71.0" onAction="#selectSession" prefWidth="150.0" promptText="select Session" />
+      <Label fx:id="proLbl" layoutX="33.0" layoutY="111.0" text="Label">
+         <font>
+            <Font name="Poppins Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="sessionLbl" layoutX="222.0" layoutY="111.0" text="Label">
+         <font>
+            <Font name="Poppins Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="idLbl" layoutX="753.0" layoutY="14.0" text="Label">
+         <font>
+            <Font name="Poppins Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameTxt" layoutX="34.0" layoutY="152.0" prefHeight="48.0" prefWidth="228.0" promptText="Name" />
+      <TextField fx:id="emailTxt" layoutX="38.0" layoutY="222.0" prefHeight="48.0" prefWidth="228.0" promptText="Email" />
+      <TextField fx:id="contactTxt" layoutX="284.0" layoutY="152.0" prefHeight="48.0" prefWidth="228.0" promptText="contact" />
+      <JFXButton fx:id="saveBtn" layoutX="607.0" layoutY="110.0" onAction="#savePatcient" prefHeight="39.0" prefWidth="174.0" text="Save" />
+      <JFXButton fx:id="updateBtn" layoutX="607.0" layoutY="180.0" onAction="#updatePatcient" prefHeight="39.0" prefWidth="174.0" text="Update" />
+      <JFXButton fx:id="deleteBtn" layoutX="622.0" layoutY="226.0" onAction="#deletePatcient" prefHeight="48.0" prefWidth="174.0" text="Delete" />
+      <TableView fx:id="patTbl" layoutX="38.0" layoutY="314.0" onMouseClicked="#searchPatcient" prefHeight="200.0" prefWidth="750.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="77.5999755859375" text="Pat_ID" />
+          <TableColumn fx:id="nameCol" prefWidth="212.00000762939453" text="Name" />
+            <TableColumn fx:id="emailCol" prefWidth="201.60000610351562" text="Email" />
+            <TableColumn fx:id="contactCol" prefWidth="125.60003662109375" text="contact" />
+            <TableColumn fx:id="programmeCol" prefWidth="69.5999755859375" text="ProID" />
+            <TableColumn fx:id="sessionCol" prefWidth="63.99997558593748" text="SessionID" />
+        </columns>
+      </TableView>
+      <TextField fx:id="feesTxt" layoutX="292.0" layoutY="226.0" prefHeight="48.0" prefWidth="228.0" promptText="fees" />
    </children>
 </AnchorPane>
