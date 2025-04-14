@@ -77,6 +77,8 @@ public class SessionController implements Initializable{
         if (resp) {
             new Alert(Alert.AlertType.INFORMATION, "Deleted Session").show();
             getAllSessions();
+            clearFields();
+            getAllTherepistNames();
         }else {
             new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
         }
@@ -94,6 +96,8 @@ public class SessionController implements Initializable{
         if (resp){
             new Alert(Alert.AlertType.INFORMATION,"Saved").show();
             getAllSessions();
+            clearFields();
+            getAllTherepistNames();
         }else {
             new Alert(Alert.AlertType.ERROR,"Something Went Wrong !").show();
         }
@@ -124,6 +128,8 @@ public class SessionController implements Initializable{
         if (resp){
             new Alert(Alert.AlertType.INFORMATION,"Updated").show();
             getAllSessions();
+            clearFields();
+            getAllTherepistNames();
         }else {
             new Alert(Alert.AlertType.ERROR,"Something Went Wrong").show();
         }
@@ -181,11 +187,21 @@ public class SessionController implements Initializable{
             endtimeCol.setCellValueFactory(new PropertyValueFactory<>("end"));
             therepyIdCol.setCellValueFactory(new PropertyValueFactory<>("therepistId"));
 
+            clearFields();
             getAllTherepistNames();
             getAllSessions();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void clearFields(){
+        idLbl.setText("");
+        nameTxt.setText("");
+        startTxt.setText("");
+        endTxt.setText("");
+        sesionIdLbl.setText("");
+        therepistCmb.getItems().clear();
     }
 
 }
