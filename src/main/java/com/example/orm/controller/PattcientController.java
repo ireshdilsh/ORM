@@ -28,7 +28,6 @@ import java.util.ResourceBundle;
 
 public class PattcientController implements Initializable {
 
-
     @FXML
     private ComboBox<String> programmeCmb;
 
