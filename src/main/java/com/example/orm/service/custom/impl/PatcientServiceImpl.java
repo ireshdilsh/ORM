@@ -41,20 +41,6 @@ public class PatcientServiceImpl implements PatcientService {
         }
         return patcentDtos;
     }
-    @Override
-    public boolean savePatcient(PatcentDto patcentDto) throws Exception{
-        Programme programme = programmeDao.findByPK(patcentDto.getProgrammeId());
-        Sessions sessions = sessionDao.findByPK(patcentDto.getSessionId());
-
-        return patcientDao.save(new Patcients(
-                patcentDto.getId(),
-                patcentDto.getName(),
-                patcentDto.getEmail(),
-                patcentDto.getPhone(),
-                programme,
-                sessions
-        ));
-    }
 
     @Override
     public boolean deletePatcient(int i) throws Exception {
@@ -79,5 +65,22 @@ public class PatcientServiceImpl implements PatcientService {
         }else {
             return false;
         }
+    }
+
+    @Override
+    public int savePatcien(PatcentDto patcentDto) throws Exception{
+        Programme programme = programmeDao.findByPK(patcentDto.getProgrammeId());
+        Sessions sessions = sessionDao.findByPK(patcentDto.getSessionId());
+
+        Patcients patcient = new Patcients(
+                patcentDto.getId(),  // If this is auto-generated, set it to 0 or ignore it
+                patcentDto.getName(),
+                patcentDto.getEmail(),
+                patcentDto.getPhone(),
+                programme,
+                sessions
+        );
+
+        return patcientDao.saves(patcient);
     }
 }

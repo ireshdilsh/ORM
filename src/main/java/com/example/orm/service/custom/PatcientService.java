@@ -8,9 +8,9 @@ import java.util.ArrayList;
 public interface PatcientService extends SuperService {
     ArrayList<PatcentDto> getAllPatcients();
 
-    boolean savePatcient(PatcentDto patcentDto) throws Exception;
-
     boolean deletePatcient(int i) throws Exception;
 
     boolean updatePatcient(PatcentDto patcentDto);
+
+    int savePatcien(PatcentDto patcentDto) throws Exception;
 }

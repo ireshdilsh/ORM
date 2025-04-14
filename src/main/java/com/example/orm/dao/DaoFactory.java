@@ -25,12 +25,14 @@ public class DaoFactory {
                     return new SessionDaoImpl();
             case PATCIENT:
                 return new PatcientDaoImpl();
+            case PAYMENT:
+                return new PaymentDaoImpl();
             default:
                 return null;
         }
     }
 
     public enum daoType{
-        ADMIN,RICIEPTION,PROGRAMME,THEREPIST,SESSIONS,PATCIENT
+        ADMIN,RICIEPTION,PROGRAMME,THEREPIST,SESSIONS,PATCIENT,PAYMENT
     }
 }

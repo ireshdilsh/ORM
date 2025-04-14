@@ -25,12 +25,14 @@ public class ServiceFactory {
                 return new SessionServiceImpl();
             case PATCIENT:
                 return new PatcientServiceImpl();
+            case PAYMENT:
+                return new PaymentServiceImpl();
             default:
                 return null;
         }
     }
 
     public enum serviceType{
-        ADMIN,RICIEPTION,PROGRAMME,THEREPIST,SESSIONS,PATCIENT
+        ADMIN,RICIEPTION,PROGRAMME,THEREPIST,SESSIONS,PATCIENT,PAYMENT
     }
 }

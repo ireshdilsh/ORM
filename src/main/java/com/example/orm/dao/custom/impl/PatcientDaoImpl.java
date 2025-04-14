@@ -15,21 +15,22 @@ public class PatcientDaoImpl implements PatcientDao {
 
     @Override
     public boolean save(Patcients entity)throws Exception {
-        Session session = factoryConfiguration.getSessionFactory();
-        Transaction tx = session.beginTransaction();
-        try{
-            session.persist(entity);
-            tx.commit();
-            return true;
-        }catch (Exception e) {
-            e.printStackTrace();
-            tx.rollback();
-            return false;
-        }finally{
-            if (session != null){
-                session.close();
-            }
-        }
+//        Session session = factoryConfiguration.getSessionFactory();
+//        Transaction tx = session.beginTransaction();
+//        try{
+//            session.persist(entity);
+//            tx.commit();
+//            return true;
+//        }catch (Exception e) {
+//            e.printStackTrace();
+//            tx.rollback();
+//            return false;
+//        }finally{
+//            if (session != null){
+//                session.close();
+//            }
+//        }
+        return false;
     }
 
     @Override
@@ -86,5 +87,22 @@ public class PatcientDaoImpl implements PatcientDao {
     @Override
     public Optional<String> getLastPK() {
         return Optional.empty();
+    }
+    @Override
+    public int saves(Patcients patcient) {
+        int generatedId;
+        Session session = factoryConfiguration.getSessionFactory();
+        Transaction tx = session.beginTransaction();
+        try {
+            generatedId = (int) session.save(patcient); // Hibernate assigns ID here
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            throw e;
+        } finally {
+            session.close();
+        }
+
+        return generatedId;
     }
 }

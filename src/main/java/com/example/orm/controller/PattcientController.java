@@ -1,10 +1,12 @@
 package com.example.orm.controller;
 
 import com.example.orm.dto.PatcentDto;
+import com.example.orm.dto.PaymentDto;
 import com.example.orm.dto.ProgrammeDto;
 import com.example.orm.dto.SessionDto;
 import com.example.orm.service.ServiceFactory;
 import com.example.orm.service.custom.PatcientService;
+import com.example.orm.service.custom.PaymentService;
 import com.example.orm.service.custom.ProgrammeService;
 import com.example.orm.service.custom.SessionService;
 import com.example.orm.tm.PatcientTM;
@@ -87,6 +89,7 @@ public class PattcientController implements Initializable {
     ProgrammeService programmeService = (ProgrammeService) ServiceFactory.getServiceFactory().getService(ServiceFactory.serviceType.PROGRAMME);
     SessionService sessionService = (SessionService) ServiceFactory.getServiceFactory().getService(ServiceFactory.serviceType.SESSIONS);
     PatcientService patcientService = (PatcientService)ServiceFactory.getServiceFactory().getService(ServiceFactory.serviceType.PATCIENT);
+    PaymentService paymentService = (PaymentService)ServiceFactory.getServiceFactory().getService(ServiceFactory.serviceType.PAYMENT);
 
     @FXML
     void deletePatcient(ActionEvent event) throws Exception {
@@ -101,19 +104,28 @@ public class PattcientController implements Initializable {
 
     @FXML
     void savePatcient(ActionEvent event) throws Exception {
-        boolean resp = patcientService.savePatcient(new PatcentDto(
-                nameTxt.getText(),
-                emailTxt.getText(),
-                Integer.parseInt(contactTxt.getText()),
-                Integer.parseInt(proLbl.getText()),
-                Integer.parseInt(sessionLbl.getText())
-        ));
+        try {
+            int newPatcientId = patcientService.savePatcien(new PatcentDto(
+                    nameTxt.getText(),
+                    emailTxt.getText(),
+                    Integer.parseInt(contactTxt.getText()),
+                    Integer.parseInt(proLbl.getText()),
+                    Integer.parseInt(sessionLbl.getText())
+            ));
 
-        if (resp) {
-            new Alert(Alert.AlertType.INFORMATION, "Patcient saved").show();
-            getAllPatcients();
-        }else {
-            new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
+            boolean resp = paymentService.savePayment(new PaymentDto(
+                    Double.parseDouble(feesTxt.getText()),
+                    newPatcientId
+            ));
+
+            if (resp){
+                new Alert(Alert.AlertType.INFORMATION, "Patcient saved").show();
+                getAllPatcients();
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
+            }
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, "Something went wrong: " + e.getMessage()).show();
         }
     }
 
