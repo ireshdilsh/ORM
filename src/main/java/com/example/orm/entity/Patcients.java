@@ -21,14 +21,13 @@ public class Patcients {
     private String name;
     private String email;
     private int phone;
-    private Double fees;
 
     @ManyToOne
     @JoinColumn(name = "programme_id")
     private Programme programmeID;
 
     @ManyToOne
-    @JoinColumn(name = "therepist_id")
+    @JoinColumn(name = "session_id")
     private Sessions sessionID;
 
 }
