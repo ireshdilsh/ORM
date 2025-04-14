@@ -22,17 +22,4 @@ public class PaymentServiceImpl implements PaymentService {
                 patcients
         ));
     }
-
-    @Override
-    public boolean updatePayment(PaymentDto paymentDto) {
-        Payment payment = paymentDao.findByPK(paymentDto.getId());
-        Patcients patcients = patcientDao.findByPK(paymentDto.getPatcientId());
-        if (payment != null){
-            return paymentDao.update(new Payment(
-                    paymentDto.getId(), paymentDto.getAmout(), patcients
-            ));
-        }else {
-            return false;
-        }
-    }
 }
