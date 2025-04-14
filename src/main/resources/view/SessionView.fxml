@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.SessionController">
    <children>
-      <ComboBox fx:id="therepistCmb" layoutX="40.0" layoutY="45.0" onAction="#selectTherepist" prefHeight="40.0" prefWidth="221.0" />
+      <ComboBox fx:id="therepistCmb" layoutX="51.0" layoutY="191.0" onAction="#selectTherepist" prefHeight="40.0" prefWidth="221.0" />
+      <Label fx:id="idLbl" layoutX="307.0" layoutY="196.0" prefHeight="30.0" prefWidth="87.0" text="Label" />
+      <TextField fx:id="nameTxt" layoutX="52.0" layoutY="16.0" prefHeight="49.0" prefWidth="234.0" promptText="Name" />
+      <TextField fx:id="startTxt" layoutX="51.0" layoutY="72.0" prefHeight="49.0" prefWidth="234.0" promptText="Start" />
+      <TextField fx:id="endTxt" layoutX="51.0" layoutY="127.0" prefHeight="49.0" prefWidth="234.0" promptText="End" />
+      <TableView fx:id="sessionTbl" layoutX="38.0" layoutY="256.0" onMouseClicked="#searchSession" prefHeight="218.0" prefWidth="694.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nameCol" prefWidth="254.39998626708984" text="Name" />
+            <TableColumn fx:id="startTimeCol" prefWidth="136.0" text="Start Time(am)" />
+            <TableColumn fx:id="endtimeCol" prefWidth="137.60000610351562" text="End Time(pm)" />
+            <TableColumn fx:id="therepyIdCol" prefWidth="92.7999267578125" text="TherepistID" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="saveBtn" layoutX="433.0" layoutY="28.0" onAction="#saveSession" prefHeight="50.0" prefWidth="234.0" text="save" />
+      <JFXButton fx:id="updateBtn" layoutX="433.0" layoutY="78.0" onAction="#updateSession" prefHeight="50.0" prefWidth="234.0" text="Update" />
+      <JFXButton fx:id="deleteBtn" layoutX="447.0" layoutY="140.0" onAction="#deleteSession" prefHeight="50.0" prefWidth="234.0" text="Delete" />
+      <Label fx:id="sesionIdLbl" layoutX="307.0" layoutY="32.0" prefHeight="18.0" prefWidth="48.0" text="Label" />
    </children>
 </AnchorPane>

@@ -1,9 +1,6 @@
 package com.example.orm.dao;
 
-import com.example.orm.dao.custom.impl.AdminDaoImpl;
-import com.example.orm.dao.custom.impl.ProgrammeDaoImpl;
-import com.example.orm.dao.custom.impl.RicieptionDaoImpl;
-import com.example.orm.dao.custom.impl.TherepistDaoImpl;
+import com.example.orm.dao.custom.impl.*;
 
 public class DaoFactory {
     private static DaoFactory daoFactory;
@@ -24,12 +21,14 @@ public class DaoFactory {
                 return new ProgrammeDaoImpl();
             case THEREPIST:
                 return new TherepistDaoImpl();
+                case SESSIONS:
+                    return new SessionDaoImpl();
             default:
                 return null;
         }
     }
 
     public enum daoType{
-        ADMIN,RICIEPTION,PROGRAMME,THEREPIST
+        ADMIN,RICIEPTION,PROGRAMME,THEREPIST,SESSIONS
     }
 }

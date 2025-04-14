@@ -15,4 +15,5 @@ public interface TherepisService extends SuperService{
 
     boolean deleteTherepist(int int1) throws Exception;
 
+    TherepistDto findByID(int i);
 }

@@ -62,5 +62,15 @@ public class TherepistServiceImpl implements TherepisService{
         return therepistDao.deleteByPK(int1);
     }
 
+    @Override
+    public TherepistDto findByID(int i) {
+        Therepists therepists = therepistDao.findByPK(i);
+        if (therepists != null) {
+            return new TherepistDto(
+                therepists.getId(), therepists.getName(), therepists.getEmail(), therepists.getPhone()
+            );
+        };
+        return null;
+    }
 
 }
