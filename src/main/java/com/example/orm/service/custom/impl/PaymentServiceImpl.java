@@ -9,7 +9,6 @@ import com.example.orm.entity.Payment;
 import com.example.orm.service.custom.PaymentService;
 
 public class PaymentServiceImpl implements PaymentService {
-
     PaymentDao paymentDao = (PaymentDao) DaoFactory.getDaoFactory().getDao(DaoFactory.daoType.PAYMENT);
     PatcientDao patcientDao = (PatcientDao) DaoFactory.getDaoFactory().getDao(DaoFactory.daoType.PATCIENT);
 
