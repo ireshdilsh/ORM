@@ -1,14 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.orm.controller.LandingController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.LandingController">
+   <children>
+      <Line endX="550.800048828125" endY="7.62939453125E-6" layoutX="31.0" layoutY="274.0" rotate="90.0" startX="51.346107482910156" startY="0.03968900442123413" stroke="#fafafa" />
+      <Line endX="550.800048828125" endY="7.62939453125E-6" layoutX="206.0" layoutY="273.0" rotate="90.0" startX="51.346107482910156" startY="0.03968900442123413" stroke="#fafafa" />
+      <Pane layoutX="308.0" layoutY="176.0" prefHeight="48.0" prefWidth="226.0" rotate="-1.0" style="-fx-background-color: #0d6efd; -fx-border-radius: 3px; -fx-background-radius: 3px;">
+         <children>
+            <Label layoutX="4.0" layoutY="3.0" text="to inner Peace " textFill="#fcfcfc">
+               <font>
+                  <Font name="Gabarito Regular" size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Line endX="596.3999633789062" layoutX="174.0" layoutY="142.0" startX="-100.0" stroke="#fafafa" />
+      <Line endX="591.6000366210938" layoutX="174.0" layoutY="275.0" startX="-100.0" stroke="#fafafa" />
+      <Line endX="593.9999389648438" endY="-3.0517578125E-5" layoutX="174.0" layoutY="411.0" startX="-100.0" stroke="#fafafa" />
+      <Line endX="550.800048828125" endY="7.62939453125E-6" layoutX="387.0" layoutY="272.0" rotate="90.0" startX="51.346107482910156" startY="0.03968900442123413" stroke="#fafafa" />
+      <Line endX="550.800048828125" endY="7.62939453125E-6" layoutX="-140.0" layoutY="285.0" rotate="90.0" startX="51.346107482910156" startY="0.03968900442123413" stroke="#fafafa" />
+      <ImageView fitHeight="80.0" fitWidth="77.0" layoutX="35.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/logo%20(2).png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="256.0" layoutY="282.0" prefHeight="38.0" prefWidth="138.0" style="-fx-background-color: #0d6efd;" text="Sign In Here" textFill="#fcfcfc">
+         <font>
+            <Font name="Gabarito Regular" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="409.0" layoutY="282.0" prefHeight="38.0" prefWidth="138.0" style="-fx-background-color: #fff; -fx-border-color: #0d6efd; -fx-border-radius: 3px;" text="Sign Up Here" textFill="#0d6efd">
+         <font>
+            <Font name="Gabarito Regular" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="155.0" layoutY="156.0" text="Confidential,Compassionate, and Convenient Mental Health Support _" textFill="#333333">
+         <font>
+            <Font name="Gabarito Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="103.0" layoutY="176.0" text="Your Journey " textFill="#333333">
+         <font>
+            <Font name="Gabarito Regular" size="34.0" />
+         </font>
+      </Label>
+      <Label layoutX="196.0" layoutY="234.0" text="Connect with licensed therepists online for confidential, compassionate " textFill="#333333">
+         <font>
+            <Font name="Gabarito Regular" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="250.0" layoutY="252.0" text="mental health support-anytime,anywhere,any device." textFill="#333333">
+         <font>
+            <Font name="Gabarito Regular" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="539.0" layoutY="179.0" text="Starts Here" textFill="#333333">
+         <font>
+            <Font name="Gabarito Regular" size="34.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>

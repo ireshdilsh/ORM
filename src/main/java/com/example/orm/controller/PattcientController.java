@@ -162,6 +162,7 @@ public class PattcientController implements Initializable {
 
     private Map<String, ProgrammeDto> programmeDtoMap = new HashMap<>();
     private Map<String, SessionDto> sessionDtoMap = new HashMap<>();
+    
     public void getAllSessions(){
         ArrayList<SessionDto> sessionDtos = sessionService.getAllSessions();
         for (SessionDto sessionDto : sessionDtos) {
@@ -180,7 +181,6 @@ public class PattcientController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try{
-
             idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
             nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
             emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));

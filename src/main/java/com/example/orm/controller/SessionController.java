@@ -138,8 +138,8 @@ public class SessionController implements Initializable{
 
     @FXML
     private ComboBox<String> therepistCmb;
-    private Map<String, TherepistDto> therepistMap = new HashMap<>();
 
+    private Map<String, TherepistDto> therepistMap = new HashMap<>();
     public void getAllTherepistNames(){
         ArrayList<TherepistDto>therepistDtos = therepisService.getAllTherepists();
         for (TherepistDto dto : therepistDtos ) {
@@ -203,5 +203,4 @@ public class SessionController implements Initializable{
         sesionIdLbl.setText("");
         therepistCmb.getItems().clear();
     }
-
 }
