@@ -1,11 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="selectRolePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="204.0" layoutY="66.0" text="Label" />
+      <Label layoutX="235.0" layoutY="146.0" text="Choose how you want to access the system_" textFill="#333333">
+         <font>
+            <Font name="Gabarito Regular" size="16.0" />
+         </font></Label>
+      <Label layoutX="235.0" layoutY="168.0" text="Select" textFill="#333333">
+         <font>
+            <Font name="Gabarito Regular" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="475.0" layoutY="167.0" text="Role" textFill="#333333">
+         <font>
+            <Font name="Gabarito Regular" size="36.0" />
+         </font>
+      </Label>
+      <Pane layoutX="344.0" layoutY="167.0" prefHeight="46.0" prefWidth="118.0" rotate="-1.0" style="-fx-background-color: #0d6efd; -fx-background-radius: 3px;">
+         <children>
+            <Label layoutX="23.0" layoutY="1.0" text="Your" textFill="#fcfcfc">
+               <font>
+                  <Font name="Gabarito Regular" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="212.0" layoutY="221.0" text="Access the system based on your role: Admin or Receptionist only." textFill="#333333">
+         <font>
+            <Font name="Gabarito Regular" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="91.0" fitWidth="85.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/logo%20(2).png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="237.0" layoutY="275.0" onAction="#gotoAdminAuth" prefHeight="144.0" prefWidth="145.0" style="-fx-border-color: #0d6efd; -fx-border-radius: 3px;" text="Im Admin" textFill="#0d6efd">
+         <font>
+            <Font name="Gabarito Regular" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="404.0" layoutY="275.0" onAction="#gotoRicieptionAuth" prefHeight="144.0" prefWidth="145.0" style="-fx-border-color: #0d6efd; -fx-border-radius: 3px;" text="Im Ricieption" textFill="#0d6efd">
+         <font>
+            <Font name="Gabarito Regular" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="47.0" layoutY="491.0" onAction="#backLandingPage" text="Back">
+         <font>
+            <Font name="Segoe UI Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
    </children>
 </AnchorPane>
