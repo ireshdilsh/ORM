@@ -1,18 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller = "com.example.orm.controller.RicieptionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.RicieptionController">
    <children>
-      <TextField fx:id="nameTxt" layoutX="89.0" layoutY="89.0" promptText="name" />
-      <TextField fx:id="emailTxt" layoutX="105.0" layoutY="139.0" prefHeight="45.0" prefWidth="150.0" promptText="email" />
-      <TextField fx:id="paddwordTxt" layoutX="123.0" layoutY="233.0" prefHeight="45.0" prefWidth="150.0" promptText="password" />
-      <TextField fx:id="contactTxt" layoutX="180.0" layoutY="333.0" prefHeight="45.0" prefWidth="150.0" promptText="contact" />
-      <JFXButton layoutX="401.0" layoutY="102.0" onAction="#saveAdmin" prefHeight="46.0" prefWidth="237.0" text="Save" />
-      <JFXButton layoutX="409.0" layoutY="210.0" onAction="#updateAdmin" prefHeight="46.0" prefWidth="237.0" text="update" />
-      <JFXButton layoutX="424.0" layoutY="296.0" onAction="#deleteAdmin" prefHeight="46.0" prefWidth="237.0" text="delete" />
+      <TextField fx:id="nameTxt" layoutX="101.0" layoutY="231.0" prefHeight="38.0" prefWidth="294.0" promptText="name" style="-fx-background-color: #fafafa; -fx-padding: 0 15;" />
+      <TextField fx:id="emailTxt" layoutX="421.0" layoutY="231.0" prefHeight="38.0" prefWidth="293.0" promptText="email" style="-fx-background-color: #fafafa; -fx-padding: 0 15;" />
+      <TextField fx:id="paddwordTxt" layoutX="101.0" layoutY="321.0" prefHeight="38.0" prefWidth="294.0" promptText="password" style="-fx-background-color: #fafafa; -fx-padding: 0 15;" />
+      <TextField fx:id="contactTxt" layoutX="421.0" layoutY="321.0" prefHeight="38.0" prefWidth="294.0" promptText="contact" style="-fx-background-color: #fafafa; -fx-padding: 0 15;" />
+      <JFXButton layoutX="231.0" layoutY="392.0" onAction="#saveAdmin" prefHeight="38.0" prefWidth="344.0" style="-fx-background-color: #0d6efd;" text="Create Ricieption Account" textFill="#fcfcfc">
+         <font>
+            <Font name="Gabarito Regular" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <ImageView fitHeight="87.0" fitWidth="96.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/logo%20(2).png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="47.0" layoutY="491.0" text="Back">
+         <font>
+            <Font name="Segoe UI Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="101.0" layoutY="207.0" text="Name">
+         <font>
+            <Font name="Gabarito Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="421.0" layoutY="207.0" text="Email Address">
+         <font>
+            <Font name="Gabarito Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="101.0" layoutY="296.0" text="Password">
+         <font>
+            <Font name="Gabarito Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="421.0" layoutY="296.0" text="Contact No">
+         <font>
+            <Font name="Gabarito Regular" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

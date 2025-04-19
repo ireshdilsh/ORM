@@ -1,23 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.TherepsiController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.TherepsiController">
    <children>
-      <JFXButton fx:id="saveBtn" layoutX="524.0" layoutY="72.0" onAction="#saveTherepist" prefHeight="40.0" prefWidth="174.0" text="save" />
-      <JFXButton fx:id="updateBtn" layoutX="532.0" layoutY="122.0" onAction="#updateTherepist" prefHeight="40.0" prefWidth="174.0" text="Update" />
-      <JFXButton fx:id="deleteBtn" layoutX="545.0" layoutY="184.0" onAction="#deleteTherepist" prefHeight="40.0" prefWidth="174.0" text="Delete" />
-      <Label fx:id="idLbl" layoutX="117.0" layoutY="64.0" prefHeight="33.0" prefWidth="135.0" text="Label" />
-      <TextField fx:id="nameTxt" layoutX="108.0" layoutY="112.0" prefHeight="40.0" prefWidth="288.0" promptText="Name" />
-      <TextField fx:id="emailTxt" layoutX="117.0" layoutY="164.0" prefHeight="40.0" prefWidth="288.0" promptText="email" />
-      <TextField fx:id="contactTxt" layoutX="125.0" layoutY="224.0" prefHeight="40.0" prefWidth="288.0" promptText="contact" />
-      <TableView fx:id="threTbl" layoutX="51.0" layoutY="292.0" onMouseClicked="#searchTherepist" prefHeight="200.0" prefWidth="724.0">
+      <JFXButton fx:id="saveBtn" layoutX="326.0" layoutY="201.0" onAction="#saveTherepist" prefHeight="40.0" prefWidth="116.0" style="-fx-background-color: #0d6efd;" text="save" textFill="#fcfcfc">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Gabarito Regular" size="13.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="updateBtn" layoutX="461.0" layoutY="201.0" onAction="#updateTherepist" prefHeight="40.0" prefWidth="116.0" style="-fx-background-color: #0d6efd;" text="Update" textFill="#fcfcfc">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Gabarito Regular" size="13.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="deleteBtn" layoutX="595.0" layoutY="201.0" onAction="#deleteTherepist" prefHeight="40.0" prefWidth="116.0" style="-fx-background-color: #0d6efd;" text="Delete" textFill="#fcfcfc">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Gabarito Regular" size="13.0" />
+         </font></JFXButton>
+      <Label fx:id="idLbl" layoutX="661.0" layoutY="42.0" prefHeight="34.0" prefWidth="99.0" text="Label">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+      <TextField fx:id="nameTxt" layoutX="76.0" layoutY="149.0" prefHeight="40.0" prefWidth="310.0" promptText="Name" style="-fx-background-color: #fafafa; -fx-padding: 0 15px;" />
+      <TextField fx:id="emailTxt" layoutX="401.0" layoutY="149.0" prefHeight="40.0" prefWidth="310.0" promptText="email" style="-fx-background-color: #fafafa; -fx-padding: 0 15px;" />
+      <TextField fx:id="contactTxt" layoutX="76.0" layoutY="201.0" prefHeight="40.0" prefWidth="228.0" promptText="contact" style="-fx-background-color: #fafafa; -fx-padding: 0 15px;" />
+      <TableView fx:id="threTbl" layoutX="34.0" layoutY="270.0" onMouseClicked="#searchTherepist" prefHeight="200.0" prefWidth="724.0">
         <columns>
           <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="nameCol" prefWidth="227.1999969482422" text="Name" />
@@ -25,5 +49,18 @@
             <TableColumn fx:id="contactCol" prefWidth="139.99993896484375" text="Contact" />
         </columns>
       </TableView>
+      <ImageView fitHeight="99.0" fitWidth="91.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/logo%20(2).png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="34.0" layoutY="511.0" onAction="#gotoBack" text="Back">
+         <font>
+            <Font name="Segoe UI Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
    </children>
 </AnchorPane>
