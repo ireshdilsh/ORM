@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="riviewAuthPane" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.RicieptionAuthController">
+   <children>
+      <ImageView fitHeight="85.0" fitWidth="91.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/logo%20(2).png" />
+         </image>
+      </ImageView>
+      <Label layoutX="323.0" layoutY="105.0" text="Front-desk access only_" textFill="#333333">
+         <font>
+            <Font name="Gabarito Regular" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="255.0" layoutY="123.0" text="Receptionist Login" textFill="#333333">
+         <font>
+            <Font name="Gabarito Regular" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="192.0" layoutY="167.0" text="Log in to manage patient appointments, records, and therapist schedules." textFill="#333333">
+         <font>
+            <Font name="Gabarito Regular" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="emailTxt" layoutX="271.0" layoutY="240.0" prefHeight="39.0" prefWidth="262.0" promptText="sample@gmail.com" style="-fx-padding: 0 15px; -fx-background-color: #fafafa;" />
+      <Label layoutX="271.0" layoutY="220.0" text="Email Address" textFill="#333333">
+         <font>
+            <Font name="Gabarito Regular" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="271.0" layoutY="300.0" text="Password" textFill="#333333">
+         <font>
+            <Font name="Gabarito Regular" size="13.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="passwotdTxt" layoutX="271.0" layoutY="319.0" prefHeight="39.0" prefWidth="262.0" promptText="* * * * * * *" style="-fx-padding: 0 15px; -fx-background-color: #fafafa;" />
+      <JFXButton layoutX="272.0" layoutY="381.0" onAction="#authRicieption" prefHeight="39.0" prefWidth="262.0" style="-fx-background-color: #0d6efd;" text="Authenticate Now" textFill="#fcfcfc">
+         <font>
+            <Font name="Gabarito Regular" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="47.0" layoutY="491.0" onAction="#backLanding" text="Back">
+         <font>
+            <Font name="Segoe UI Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>
