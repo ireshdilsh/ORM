@@ -235,5 +235,4 @@ public class PattcientController implements Initializable {
             System.out.println("Session Not Found");
         }
     }
-
 }
