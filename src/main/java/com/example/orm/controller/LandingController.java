@@ -12,11 +12,11 @@ public class LandingController {
     private AnchorPane LandingPane;
     @FXML
     void gotoSigInView(ActionEvent event) throws Exception{
-        new WindowUtils().navigateTo("LandingView", LandingPane);
+        new WindowUtils().navigateTo("RoleView", LandingPane);
     }
     @FXML
     void gotoSignUpView(ActionEvent event) throws Exception{
-        new WindowUtils().navigateTo("SignUpView", LandingPane);
+        new WindowUtils().navigateTo("RoleView", LandingPane);
     }
     
 }

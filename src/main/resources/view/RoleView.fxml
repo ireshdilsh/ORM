@@ -9,7 +9,10 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="selectRolePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="selectRolePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" 
+            xmlns="http://javafx.com/javafx/22" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.orm.controller.RoleController">
    <children>
       <Label layoutX="235.0" layoutY="146.0" text="Choose how you want to access the system_" textFill="#333333">
          <font>

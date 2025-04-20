@@ -59,7 +59,8 @@ public class PaymentDaoImpl implements PaymentDao {
 
     @Override
     public List<Payment> getAll() {
-        return List.of();
+        Session session = factoryConfiguration.getSessionFactory();
+        return session.createQuery("from payment").list();
     }
 
     @Override

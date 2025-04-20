@@ -22,17 +22,18 @@ public class AdminAuthController {
 
     @FXML
     void backLanding(ActionEvent event) throws Exception{
-        new WindowUtils().navigateTo("LandingView", adminLoginAuthPane);
+        new WindowUtils().navigateTo("RoleView", adminLoginAuthPane);
     }
 
     @FXML
-    void gotoChoicesView(ActionEvent event) {
-        if (emailTxt.getText().isEmpty()) {
-            new Alert(AlertType.ERROR,"Email Address Cannot be Null").show();
-        }
+    void gotoChoicesView(ActionEvent event) throws Exception{
+        // if (emailTxt.getText().isEmpty()) {
+        //     new Alert(AlertType.ERROR,"Email Address Cannot be Null").show();
+        // }
 
-        if (passwordTxt.getText().isEmpty()) {
-            new Alert(AlertType.ERROR,"Password Cannot be Null").show();
-        }
+        // if (passwordTxt.getText().isEmpty()) {
+        //     new Alert(AlertType.ERROR,"Password Cannot be Null").show();
+        // }
+        new WindowUtils().navigateTo("AdminChoicesView", adminLoginAuthPane);
     }
 }

@@ -22,16 +22,17 @@ public class RicieptionAuthController {
     @FXML
     void authRicieption(ActionEvent event) throws Exception {
 
-        if (emailTxt.getText().isEmpty() || passwotdTxt.getText().isEmpty()) {
-            new Alert(Alert.AlertType.ERROR,"Cannot be null user input fields").show();
-        }else {
-            new WindowUtils().navigateTo("",riviewAuthPane);
-        }
+        // if (emailTxt.getText().isEmpty() || passwotdTxt.getText().isEmpty()) {
+        //     new Alert(Alert.AlertType.ERROR,"Cannot be null user input fields").show();
+        // }else {
+        //     new WindowUtils().navigateTo("",riviewAuthPane);
+        // }
+        new WindowUtils().navigateTo("RicieptionChoiceView", riviewAuthPane);
     }
 
     @FXML
     void backLanding(ActionEvent event) throws Exception {
-        new WindowUtils().navigateTo("LandingView",riviewAuthPane);
+        new WindowUtils().navigateTo("RoleView",riviewAuthPane);
     }
 
 }

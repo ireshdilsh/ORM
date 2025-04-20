@@ -10,6 +10,7 @@ import com.example.orm.service.custom.PaymentService;
 import com.example.orm.service.custom.ProgrammeService;
 import com.example.orm.service.custom.SessionService;
 import com.example.orm.tm.PatcientTM;
+import com.example.orm.utils.WindowUtils;
 import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -238,5 +239,10 @@ public class PattcientController implements Initializable {
         }else {
             System.out.println("Session Not Found");
         }
+    }
+
+    @FXML
+    void gotoBack(ActionEvent event) throws Exception{
+        new WindowUtils().navigateTo("RicieptionChoiceView", pane);
     }
 }

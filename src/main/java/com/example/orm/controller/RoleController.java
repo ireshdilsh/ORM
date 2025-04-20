@@ -12,17 +12,17 @@ public class RoleController {
 
     @FXML
     void backLandingPage(ActionEvent event) throws Exception{
-        new WindowUtils().navigateTo("LandingView",selectRolePane);
+        new WindowUtils().navigateTo("Landing",selectRolePane);
     }
 
     @FXML
-    void gotoAdminAuth(ActionEvent event) {
-        
+    void gotoAdminAuth(ActionEvent event) throws Exception{
+        new WindowUtils().navigateTo("AdminAuthView", selectRolePane);
     }
 
     @FXML
-    void gotoRicieptionAuth(ActionEvent event) {
-
+    void gotoRicieptionAuth(ActionEvent event) throws Exception{
+        new WindowUtils().navigateTo("RicieptionAuthView", selectRolePane);
     }
 
 }

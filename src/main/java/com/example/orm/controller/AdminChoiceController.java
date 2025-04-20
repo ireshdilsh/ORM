@@ -16,12 +16,12 @@ public class AdminChoiceController {
     }
 
     @FXML
-    void gotoTherepists(ActionEvent event) {
-
+    void gotoTherepists(ActionEvent event) throws Exception{
+        new WindowUtils().navigateTo("TherepistView", pane);
     }
 
     @FXML
-    void gotoTherepyProgramme(ActionEvent event) {
-
+    void gotoTherepyProgramme(ActionEvent event) throws Exception{
+        new WindowUtils().navigateTo("ProgrammeView", pane);
     }
 }
