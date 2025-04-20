@@ -12,7 +12,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.SessionController">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" 
+            xmlns="http://javafx.com/javafx/22" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.example.orm.controller.SessionController">
    <children>
       <ComboBox fx:id="therepistCmb" layoutX="381.0" layoutY="134.0" onAction="#selectTherepist" prefHeight="40.0" prefWidth="284.0" promptText="Select Therepist" style="-fx-background-color: #fafafa; -fx-padding: 0 15px;" />
       <Label fx:id="idLbl" layoutX="680.0" layoutY="139.0" prefHeight="30.0" prefWidth="87.0" text="Label">

@@ -9,7 +9,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.RicieptionController">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" 
+            xmlns="http://javafx.com/javafx/22" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.example.orm.controller.RicieptionController">
    <children>
       <TextField fx:id="nameTxt" layoutX="101.0" layoutY="231.0" prefHeight="38.0" prefWidth="294.0" promptText="name" style="-fx-background-color: #fafafa; -fx-padding: 0 15;" />
       <TextField fx:id="emailTxt" layoutX="421.0" layoutY="231.0" prefHeight="38.0" prefWidth="293.0" promptText="email" style="-fx-background-color: #fafafa; -fx-padding: 0 15;" />

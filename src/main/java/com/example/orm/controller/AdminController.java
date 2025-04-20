@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.AnchorPane;
 
 public class AdminController {
 
@@ -23,6 +24,9 @@ public class AdminController {
 
     @FXML
     private TextField nameTxt;
+
+    @FXML
+    private AnchorPane pane;
 
     @FXML
     private TextField paddwordTxt;

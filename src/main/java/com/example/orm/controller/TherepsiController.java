@@ -25,6 +25,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 public class TherepsiController implements Initializable{
 
@@ -65,6 +66,9 @@ public class TherepsiController implements Initializable{
 
     @FXML
     private JFXButton updateBtn;
+
+    @FXML
+    private AnchorPane pane;
 
     @FXML
     void deleteTherepist(ActionEvent event) throws Exception {

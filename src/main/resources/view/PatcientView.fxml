@@ -12,7 +12,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.PattcientController">
+<AnchorPane fx:id="pane" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" 
+            xmlns="http://javafx.com/javafx/22" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.example.orm.controller.PattcientController">
    <children>
       <ComboBox fx:id="programmeCmb" layoutX="122.0" layoutY="220.0" onAction="#selectProgramme" prefHeight="39.0" prefWidth="228.0" promptText="select Programme" style="-fx-background-color: #fafafa; -fx-padding: 0 15px;" />
       <ComboBox fx:id="sesssonCmb" layoutX="439.0" layoutY="220.0" onAction="#selectSession" prefHeight="39.0" prefWidth="228.0" promptText="select Session" style="-fx-background-color: #fafafa; -fx-padding: 0 15px;" />

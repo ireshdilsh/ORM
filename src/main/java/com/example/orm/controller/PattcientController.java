@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -27,6 +28,9 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 public class PattcientController implements Initializable {
+
+    @FXML
+    private AnchorPane pane;
 
     @FXML
     private ComboBox<String> programmeCmb;

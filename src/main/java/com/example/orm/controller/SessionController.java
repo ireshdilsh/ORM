@@ -23,6 +23,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 public class SessionController implements Initializable{
 
@@ -70,6 +71,9 @@ public class SessionController implements Initializable{
 
     @FXML
     private Label sesionIdLbl;
+
+    @FXML
+    private AnchorPane pane;
 
     @FXML
     void deleteSession(ActionEvent event) throws Exception {

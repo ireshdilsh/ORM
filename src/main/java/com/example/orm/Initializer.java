@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
 public class Initializer extends Application {
 
     @Override
@@ -16,7 +17,9 @@ public class Initializer extends Application {
         stage.setTitle("SESSIONS");
         stage.show();
     }
+
     public static void main(String[] args) {
+        
         launch();
     }
 }
