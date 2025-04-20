@@ -1,5 +1,7 @@
 package com.example.orm.controller;
 
+import com.example.orm.utils.WindowUtils;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
@@ -9,8 +11,8 @@ public class AdminChoiceController {
     private AnchorPane pane;
 
     @FXML
-    void gotoBack(ActionEvent event) {
-
+    void gotoBack(ActionEvent event) throws Exception{
+        new WindowUtils().navigateTo("Landing", pane);
     }
 
     @FXML
