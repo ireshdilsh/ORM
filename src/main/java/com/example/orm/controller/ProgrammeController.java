@@ -9,6 +9,7 @@ import com.example.orm.service.ServiceFactory;
 import com.example.orm.service.ServiceFactory.serviceType;
 import com.example.orm.service.custom.ProgrammeService;
 import com.example.orm.tm.ProgrammeTM;
+import com.example.orm.utils.WindowUtils;
 import com.jfoenix.controls.JFXButton;
 
 import javafx.beans.Observable;
@@ -118,6 +119,9 @@ public class ProgrammeController implements Initializable{
         programmenameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         durationCol.setCellValueFactory(new PropertyValueFactory<>("duration"));
         feesCol.setCellValueFactory(new PropertyValueFactory<>("fees"));
+
+            idLbl.setText("");
+
             getAllProgrammes();
             serachProgramme();
         } catch (Exception e) {
@@ -151,6 +155,11 @@ public class ProgrammeController implements Initializable{
                 new Alert(AlertType.ERROR,"Somrthing went Wrong !").show();
             }
         });
+    }
+
+    @FXML
+    void gotoBack(ActionEvent event) throws Exception{
+        new WindowUtils().navigateTo("AdminChoicesView", pane);
     }
 
     public void clearFields(){

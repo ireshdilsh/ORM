@@ -10,11 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="adminLoginAuthPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" 
-            xmlns="http://javafx.com/javafx/22" 
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.orm.controller.AdminAuthController">
+<AnchorPane fx:id="adminLoginAuthPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.AdminAuthController">
    <children>
       <ImageView fitHeight="91.0" fitWidth="85.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -64,5 +60,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <Label layoutX="271.0" layoutY="430.0" text="If you haven't an account ?" textFill="#333333">
+         <font>
+            <Font name="Gabarito Regular" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="457.0" layoutY="430.0" onMouseClicked="#gotoRegister" text="Sign Up Here" textFill="#0d6efd">
+         <font>
+            <Font name="Gabarito Regular" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

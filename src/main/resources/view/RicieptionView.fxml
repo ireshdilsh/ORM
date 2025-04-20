@@ -9,16 +9,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" 
-            xmlns="http://javafx.com/javafx/22" 
-            xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="com.example.orm.controller.RicieptionController">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.RicieptionController">
    <children>
       <TextField fx:id="nameTxt" layoutX="101.0" layoutY="231.0" prefHeight="38.0" prefWidth="294.0" promptText="name" style="-fx-background-color: #fafafa; -fx-padding: 0 15;" />
       <TextField fx:id="emailTxt" layoutX="421.0" layoutY="231.0" prefHeight="38.0" prefWidth="293.0" promptText="email" style="-fx-background-color: #fafafa; -fx-padding: 0 15;" />
       <TextField fx:id="paddwordTxt" layoutX="101.0" layoutY="321.0" prefHeight="38.0" prefWidth="294.0" promptText="password" style="-fx-background-color: #fafafa; -fx-padding: 0 15;" />
       <TextField fx:id="contactTxt" layoutX="421.0" layoutY="321.0" prefHeight="38.0" prefWidth="294.0" promptText="contact" style="-fx-background-color: #fafafa; -fx-padding: 0 15;" />
-      <JFXButton layoutX="231.0" layoutY="392.0" onAction="#saveAdmin" prefHeight="38.0" prefWidth="344.0" style="-fx-background-color: #0d6efd;" text="Create Ricieption Account" textFill="#fcfcfc">
+      <JFXButton layoutX="231.0" layoutY="391.0" onAction="#saveAdmin" prefHeight="38.0" prefWidth="344.0" style="-fx-background-color: #0d6efd;" text="Create Ricieption Account" textFill="#fcfcfc">
          <font>
             <Font name="Gabarito Regular" size="13.0" />
          </font>
@@ -30,7 +27,7 @@
             <Image url="@../assests/logo%20(2).png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="47.0" layoutY="491.0" text="Back">
+      <JFXButton layoutX="47.0" layoutY="491.0" onAction="#gotoBack" text="Back">
          <font>
             <Font name="Segoe UI Bold" size="12.0" />
          </font>
@@ -53,6 +50,21 @@
       <Label layoutX="421.0" layoutY="296.0" text="Contact No">
          <font>
             <Font name="Gabarito Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="232.0" layoutY="449.0" text="If you already have an account ?">
+         <font>
+            <Font name="Gabarito Regular" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="504.0" layoutY="449.0" onMouseClicked="#gotoLog" text="Sign In Here" textFill="#0d6efd">
+         <font>
+            <Font name="Gabarito Regular" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="193.0" layoutY="114.0" text="Create Ricieption Account">
+         <font>
+            <Font name="Gabarito Regular" size="36.0" />
          </font>
       </Label>
    </children>

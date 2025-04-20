@@ -11,10 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" 
-            xmlns="http://javafx.com/javafx/22" 
-            xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="com.example.orm.controller.TherepsiController">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="806.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.orm.controller.TherepsiController">
    <children>
       <JFXButton fx:id="saveBtn" layoutX="326.0" layoutY="201.0" onAction="#saveTherepist" prefHeight="40.0" prefWidth="116.0" style="-fx-background-color: #0d6efd;" text="save" textFill="#fcfcfc">
          <cursor>
@@ -44,7 +41,7 @@
       <TextField fx:id="nameTxt" layoutX="76.0" layoutY="149.0" prefHeight="40.0" prefWidth="310.0" promptText="Name" style="-fx-background-color: #fafafa; -fx-padding: 0 15px;" />
       <TextField fx:id="emailTxt" layoutX="401.0" layoutY="149.0" prefHeight="40.0" prefWidth="310.0" promptText="email" style="-fx-background-color: #fafafa; -fx-padding: 0 15px;" />
       <TextField fx:id="contactTxt" layoutX="76.0" layoutY="201.0" prefHeight="40.0" prefWidth="228.0" promptText="contact" style="-fx-background-color: #fafafa; -fx-padding: 0 15px;" />
-      <TableView fx:id="threTbl" layoutX="34.0" layoutY="270.0" onMouseClicked="#searchTherepist" prefHeight="200.0" prefWidth="724.0">
+      <TableView fx:id="threTbl" layoutX="41.0" layoutY="275.0" onMouseClicked="#searchTherepist" prefHeight="200.0" prefWidth="724.0">
         <columns>
           <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="nameCol" prefWidth="227.1999969482422" text="Name" />

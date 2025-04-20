@@ -192,6 +192,9 @@ public class SessionController implements Initializable{
             endtimeCol.setCellValueFactory(new PropertyValueFactory<>("end"));
             therepyIdCol.setCellValueFactory(new PropertyValueFactory<>("therepistId"));
 
+            idLbl.setText("");
+            sesionIdLbl.setText("");
+
             clearFields();
             getAllTherepistNames();
             getAllSessions();

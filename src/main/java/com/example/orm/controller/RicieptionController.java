@@ -4,11 +4,13 @@ import com.example.orm.dto.RicieptionDto;
 import com.example.orm.service.ServiceFactory;
 import com.example.orm.service.ServiceFactory.serviceType;
 import com.example.orm.service.custom.RicieptionServce;
+import com.example.orm.utils.WindowUtils;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
@@ -55,4 +57,13 @@ public class RicieptionController {
 
     }
 
+    @FXML
+    void gotoLog(MouseEvent event) throws Exception{
+        new WindowUtils().navigateTo("RicieptionAuthView", pane);
+    }
+
+    @FXML
+    void gotoBack(ActionEvent event) throws Exception{
+        new WindowUtils().navigateTo("RoleView", pane);
+    }
 }

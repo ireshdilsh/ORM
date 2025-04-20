@@ -4,12 +4,14 @@ import com.example.orm.dto.AdminDto;
 import com.example.orm.service.ServiceFactory;
 import com.example.orm.service.ServiceFactory.serviceType;
 import com.example.orm.service.custom.AdminService;
+import com.example.orm.utils.WindowUtils;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class AdminController {
@@ -37,6 +39,11 @@ public class AdminController {
     }
 
     @FXML
+    void gotoBack(ActionEvent event) throws Exception{
+        new WindowUtils().navigateTo("RoleView", pane);
+    }
+
+    @FXML
     void saveAdmin(ActionEvent event) throws Exception {
         boolean resp = adminService.saveAdmin(new AdminDto(
                 nameTxt.getText(), emailTxt.getText(), paddwordTxt.getText(), Integer.parseInt(contactTxt.getText())));
@@ -46,6 +53,11 @@ public class AdminController {
         } else {
             new Alert(AlertType.ERROR, "Something Went Wrong!").show();
         }
+    }
+
+    @FXML
+    void gotoLog(MouseEvent event) throws Exception{
+        new WindowUtils().navigateTo("AdminAuthView", pane);
     }
 
     @FXML

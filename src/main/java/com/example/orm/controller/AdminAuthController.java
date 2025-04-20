@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class AdminAuthController {
@@ -23,6 +24,11 @@ public class AdminAuthController {
     @FXML
     void backLanding(ActionEvent event) throws Exception{
         new WindowUtils().navigateTo("RoleView", adminLoginAuthPane);
+    }
+
+    @FXML
+    void gotoRegister(MouseEvent event) throws Exception{
+        new WindowUtils().navigateTo("AdminView", adminLoginAuthPane);
     }
 
     @FXML

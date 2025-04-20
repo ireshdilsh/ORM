@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class RicieptionAuthController {
@@ -35,4 +36,8 @@ public class RicieptionAuthController {
         new WindowUtils().navigateTo("RoleView",riviewAuthPane);
     }
 
+    @FXML
+    void gotoRegister(MouseEvent event) throws Exception{
+        new WindowUtils().navigateTo("RicieptionView", riviewAuthPane);
+    }
 }

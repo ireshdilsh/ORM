@@ -9,6 +9,7 @@ import com.example.orm.service.ServiceFactory;
 import com.example.orm.service.ServiceFactory.serviceType;
 import com.example.orm.service.custom.TherepisService;
 import com.example.orm.tm.TherepistTM;
+import com.example.orm.utils.WindowUtils;
 import com.jfoenix.controls.JFXButton;
 
 import javafx.beans.Observable;
@@ -71,6 +72,11 @@ public class TherepsiController implements Initializable{
     private AnchorPane pane;
 
     @FXML
+    void gotoBack(ActionEvent event) throws Exception{
+        new WindowUtils().navigateTo("AdminChoicesView", pane);
+    }
+
+    @FXML
     void deleteTherepist(ActionEvent event) throws Exception {
         boolean resp = therepisService.deleteTherepist(Integer.parseInt(idLbl.getText()));
         if (resp) {
@@ -124,6 +130,8 @@ public class TherepsiController implements Initializable{
             nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
             emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
             contactCol.setCellValueFactory(new PropertyValueFactory<>("phone"));
+
+            idLbl.setText("");
 
             getAllTherepists();
         } catch (Exception e) {

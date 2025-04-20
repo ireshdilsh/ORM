@@ -193,6 +193,10 @@ public class PattcientController implements Initializable {
             programmeCol.setCellValueFactory(new PropertyValueFactory<>("programmeId"));
             sessionCol.setCellValueFactory(new PropertyValueFactory<>("sessionId"));
 
+            sessionLbl.setText("");
+            proLbl.setText("");
+            idLbl.setText("");
+
             getAllProgrammes();
             getAllSessions();
             getAllPatcients();
