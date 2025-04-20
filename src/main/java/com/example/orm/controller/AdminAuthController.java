@@ -1,5 +1,7 @@
 package com.example.orm.controller;
 
+import com.example.orm.service.ServiceFactory;
+import com.example.orm.service.custom.AdminService;
 import com.example.orm.utils.WindowUtils;
 
 import javafx.event.ActionEvent;
@@ -12,6 +14,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class AdminAuthController {
+
+    AdminService adminService = (AdminService) ServiceFactory.getServiceFactory().getService(ServiceFactory.serviceType.ADMIN);
+
     @FXML
     private AnchorPane adminLoginAuthPane;
 
@@ -33,13 +38,15 @@ public class AdminAuthController {
 
     @FXML
     void gotoChoicesView(ActionEvent event) throws Exception{
-        // if (emailTxt.getText().isEmpty()) {
-        //     new Alert(AlertType.ERROR,"Email Address Cannot be Null").show();
-        // }
+        String email = emailTxt.getText();
+        String password = passwordTxt.getText();
 
-        // if (passwordTxt.getText().isEmpty()) {
-        //     new Alert(AlertType.ERROR,"Password Cannot be Null").show();
-        // }
-        new WindowUtils().navigateTo("AdminChoicesView", adminLoginAuthPane);
+        boolean resp = adminService.authAdmin(email, password);
+
+        if (resp) {
+            new WindowUtils().navigateTo("AdminChoicesView", adminLoginAuthPane);
+        }else{
+            new Alert(AlertType.ERROR, "Something Went Wrong!").show();
+        }
     }
 }

@@ -21,4 +21,9 @@ public class AdminServiceImpl implements AdminService{
         ));
     }
 
+    @Override
+    public boolean authAdmin(String email, String password) {
+        return adminDao.authAdmin(email, password);
+    }
+
 }

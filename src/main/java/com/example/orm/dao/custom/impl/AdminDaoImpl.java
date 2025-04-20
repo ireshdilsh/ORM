@@ -64,4 +64,14 @@ public class AdminDaoImpl implements AdminDao {
         throw new UnsupportedOperationException("Unimplemented method 'findByPK'");
     }
 
+    // Login Authentication with Hibernate
+    @Override
+    public boolean authAdmin(String email, String password) {
+        Session session = configuration.getSessionFactory();
+        return session.createQuery("from admin where email=:email and password=:password")
+                      .setParameter("email", email)
+                      .setParameter("password", password)
+                      .list().size() > 0;
+    }
+
 }

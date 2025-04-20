@@ -5,4 +5,6 @@ import com.example.orm.entity.Admin;
 
 public interface AdminDao extends CrudDao<Admin>{
 
+    boolean authAdmin(String email, String password);
+
 }

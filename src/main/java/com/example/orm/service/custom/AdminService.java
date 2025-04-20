@@ -7,4 +7,6 @@ public interface AdminService extends SuperService{
 
     boolean saveAdmin(AdminDto adminDto) throws Exception;
 
+    boolean authAdmin(String email, String password);
+
 }
