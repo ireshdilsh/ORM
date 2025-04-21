@@ -38,6 +38,7 @@ public class RicieptionController {
         nameTxt.setText("");
         emailTxt.setText("");
         paddwordTxt.setText("");
+        contactTxt.setText("");
     }
     
     @FXML
@@ -48,7 +49,8 @@ public class RicieptionController {
     @FXML
     void saveAdmin(ActionEvent event) throws Exception {
 
-        String emailReg = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/";
+        String emailReg = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@" +
+                    "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         String conReg = "^[0-9]{10}$";
 
         if (!emailTxt.getText().matches(emailReg)) {
