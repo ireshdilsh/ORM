@@ -1,6 +1,7 @@
 package com.example.orm.controller;
 
 import com.example.orm.dto.RicieptionDto;
+import com.example.orm.exception.RegisterException;
 import com.example.orm.service.ServiceFactory;
 import com.example.orm.service.ServiceFactory.serviceType;
 import com.example.orm.service.custom.RicieptionServce;
@@ -63,15 +64,19 @@ public class RicieptionController {
             return;
         }
 
-        boolean resp = ricieptionServce.saveRicieption(new RicieptionDto(
-        nameTxt.getText(), emailTxt.getText(), paddwordTxt.getText(),
-        Integer.parseInt(contactTxt.getText())));
-
-        if (resp) {
-        new Alert(AlertType.INFORMATION, "New Ricieptoin Added Success!").show();
-        clearFields();
-        } else {
-        new Alert(AlertType.ERROR, "Something Went Wrong!").show();
+        try {
+            boolean resp = ricieptionServce.saveRicieption(new RicieptionDto(
+                nameTxt.getText(), emailTxt.getText(), paddwordTxt.getText(),
+                Integer.parseInt(contactTxt.getText())));
+        
+                if (resp) {
+                new Alert(AlertType.INFORMATION, "New Ricieptoin Added Success!").show();
+                clearFields();
+                } else {
+                new Alert(AlertType.ERROR, "Something Went Wrong!").show();
+                }
+        } catch (RegisterException e) {
+            e.printStackTrace();
         }
     }
 

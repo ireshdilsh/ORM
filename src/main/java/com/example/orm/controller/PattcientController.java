@@ -4,6 +4,7 @@ import com.example.orm.dto.PatcentDto;
 import com.example.orm.dto.PaymentDto;
 import com.example.orm.dto.ProgrammeDto;
 import com.example.orm.dto.SessionDto;
+import com.example.orm.exception.PayException;
 import com.example.orm.service.ServiceFactory;
 import com.example.orm.service.custom.PatcientService;
 import com.example.orm.service.custom.PaymentService;
@@ -91,19 +92,23 @@ public class PattcientController implements Initializable {
     @FXML
     private JFXButton updateBtn;
 
-    ProgrammeService programmeService = (ProgrammeService) ServiceFactory.getServiceFactory().getService(ServiceFactory.serviceType.PROGRAMME);
-    SessionService sessionService = (SessionService) ServiceFactory.getServiceFactory().getService(ServiceFactory.serviceType.SESSIONS);
-    PatcientService patcientService = (PatcientService)ServiceFactory.getServiceFactory().getService(ServiceFactory.serviceType.PATCIENT);
-    PaymentService paymentService = (PaymentService)ServiceFactory.getServiceFactory().getService(ServiceFactory.serviceType.PAYMENT);
+    ProgrammeService programmeService = (ProgrammeService) ServiceFactory.getServiceFactory()
+            .getService(ServiceFactory.serviceType.PROGRAMME);
+    SessionService sessionService = (SessionService) ServiceFactory.getServiceFactory()
+            .getService(ServiceFactory.serviceType.SESSIONS);
+    PatcientService patcientService = (PatcientService) ServiceFactory.getServiceFactory()
+            .getService(ServiceFactory.serviceType.PATCIENT);
+    PaymentService paymentService = (PaymentService) ServiceFactory.getServiceFactory()
+            .getService(ServiceFactory.serviceType.PAYMENT);
 
     @FXML
     void deletePatcient(ActionEvent event) throws Exception {
         boolean resp = patcientService.deletePatcient(Integer.parseInt(idLbl.getText()));
-        if (resp){
+        if (resp) {
             new Alert(Alert.AlertType.INFORMATION, "Patcient deleted").show();
             getAllPatcients();
-        }else {
-            new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
         }
     }
 
@@ -111,7 +116,7 @@ public class PattcientController implements Initializable {
     void savePatcient(ActionEvent event) throws Exception {
 
         String emailReg = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@" +
-                    "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+                "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         String conReg = "^[0-9]{10}$";
 
         if (!emailTxt.getText().matches(emailReg)) {
@@ -130,22 +135,24 @@ public class PattcientController implements Initializable {
                     emailTxt.getText(),
                     Integer.parseInt(contactTxt.getText()),
                     Integer.parseInt(proLbl.getText()),
-                    Integer.parseInt(sessionLbl.getText())
-            ));
+                    Integer.parseInt(sessionLbl.getText())));
 
-            boolean resp = paymentService.savePayment(new PaymentDto(
-                    Double.parseDouble(feesTxt.getText()),
-                    newPatcientId
-            ));
+            try {
+                boolean resp = paymentService.savePayment(new PaymentDto(
+                        Double.parseDouble(feesTxt.getText()),
+                        newPatcientId));
 
-            if (resp){
-                new Alert(Alert.AlertType.INFORMATION, "Patcient saved").show();
-                getAllPatcients();
-            }else {
-                new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
+                if (resp) {
+                    new Alert(Alert.AlertType.INFORMATION, "Patcient saved").show();
+                    getAllPatcients();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
+                }
+            } catch (PayException e) {
+                e.printStackTrace();
             }
         } catch (Exception e) {
-            new Alert(Alert.AlertType.ERROR, "Something went wrong: " + e.getMessage()).show();
+            new Alert(Alert.AlertType.ERROR, "Something went wrong!").show();
         }
     }
 
@@ -166,7 +173,7 @@ public class PattcientController implements Initializable {
     void updatePatcient(ActionEvent event) {
 
         String emailReg = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@" +
-                    "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+                "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         String conReg = "^[0-9]{10}$";
 
         if (!emailTxt.getText().matches(emailReg)) {
@@ -185,29 +192,29 @@ public class PattcientController implements Initializable {
                 emailTxt.getText(),
                 Integer.parseInt(contactTxt.getText()),
                 Integer.parseInt(proLbl.getText()),
-                Integer.parseInt(sessionLbl.getText())
-        ));
+                Integer.parseInt(sessionLbl.getText())));
 
         if (resp) {
             new Alert(Alert.AlertType.INFORMATION, "Patcient Updated").show();
             getAllPatcients();
-        }else {
-            new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
         }
     }
 
     private Map<String, ProgrammeDto> programmeDtoMap = new HashMap<>();
     private Map<String, SessionDto> sessionDtoMap = new HashMap<>();
-    
-    public void getAllSessions(){
+
+    public void getAllSessions() {
         ArrayList<SessionDto> sessionDtos = sessionService.getAllSessions();
         for (SessionDto sessionDto : sessionDtos) {
             sessionDtoMap.put(sessionDto.getName(), sessionDto);
             sesssonCmb.getItems().add(sessionDto.getName());
         }
     }
-    public void getAllProgrammes(){
-        ArrayList<ProgrammeDto>programmeDtos = programmeService.getAllProgrammes();
+
+    public void getAllProgrammes() {
+        ArrayList<ProgrammeDto> programmeDtos = programmeService.getAllProgrammes();
         for (ProgrammeDto programmeDto : programmeDtos) {
             programmeDtoMap.put(programmeDto.getName(), programmeDto);
             programmeCmb.getItems().add(programmeDto.getName());
@@ -216,7 +223,7 @@ public class PattcientController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        try{
+        try {
             idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
             nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
             emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
@@ -231,14 +238,14 @@ public class PattcientController implements Initializable {
             getAllProgrammes();
             getAllSessions();
             getAllPatcients();
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     private void getAllPatcients() {
-        ArrayList<PatcentDto>patcentDtos = patcientService.getAllPatcients();
-        ObservableList<PatcientTM>patcientTMS = FXCollections.observableArrayList();
+        ArrayList<PatcentDto> patcentDtos = patcientService.getAllPatcients();
+        ObservableList<PatcientTM> patcientTMS = FXCollections.observableArrayList();
 
         for (PatcentDto dto : patcentDtos) {
             PatcientTM patcientTM = new PatcientTM(
@@ -247,8 +254,7 @@ public class PattcientController implements Initializable {
                     dto.getEmail(),
                     dto.getPhone(),
                     dto.getProgrammeId(),
-                    dto.getSessionId()
-            );
+                    dto.getSessionId());
             patcientTMS.add(patcientTM);
         }
         patTbl.setItems(patcientTMS);
@@ -260,7 +266,7 @@ public class PattcientController implements Initializable {
         ProgrammeDto programmeDto = programmeDtoMap.get(selectName);
         if (programmeDto != null) {
             proLbl.setText(String.valueOf(programmeDto.getId()));
-        }else {
+        } else {
             System.out.println("Programme not found");
         }
     }
@@ -271,13 +277,13 @@ public class PattcientController implements Initializable {
         SessionDto sessionDto = sessionDtoMap.get(selectName);
         if (sessionDto != null) {
             sessionLbl.setText(String.valueOf(sessionDto.getId()));
-        }else {
+        } else {
             System.out.println("Session Not Found");
         }
     }
 
     @FXML
-    void gotoBack(ActionEvent event) throws Exception{
+    void gotoBack(ActionEvent event) throws Exception {
         new WindowUtils().navigateTo("RicieptionChoiceView", pane);
     }
 }

@@ -1,6 +1,7 @@
 package com.example.orm.controller;
 
 import com.example.orm.dto.AdminDto;
+import com.example.orm.exception.RegisterException;
 import com.example.orm.service.ServiceFactory;
 import com.example.orm.service.ServiceFactory.serviceType;
 import com.example.orm.service.custom.AdminService;
@@ -60,7 +61,8 @@ public class AdminController {
             return;
         }
 
-        boolean resp = adminService.saveAdmin(new AdminDto(
+        try {
+            boolean resp = adminService.saveAdmin(new AdminDto(
                 nameTxt.getText(), emailTxt.getText(), paddwordTxt.getText(), Integer.parseInt(contactTxt.getText())));
 
         if (resp) {
@@ -68,6 +70,9 @@ public class AdminController {
             clearFields();
         } else {
             new Alert(AlertType.ERROR, "Something Went Wrong!").show();
+        }
+        } catch (RegisterException e) {
+            e.printStackTrace();
         }
     }
 

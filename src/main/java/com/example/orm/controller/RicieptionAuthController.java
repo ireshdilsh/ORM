@@ -1,5 +1,6 @@
 package com.example.orm.controller;
 
+import com.example.orm.exception.LoginException;
 import com.example.orm.service.ServiceFactory;
 import com.example.orm.service.ServiceFactory.serviceType;
 import com.example.orm.service.custom.RicieptionServce;
@@ -29,7 +30,8 @@ public class RicieptionAuthController {
     @FXML
     void authRicieption(ActionEvent event) throws Exception {
 
-        String email = emailTxt.getText();
+        try {
+            String email = emailTxt.getText();
         String password = passwotdTxt.getText();
 
         boolean resp = ricieptionServce.authLogin(email,password);
@@ -37,6 +39,9 @@ public class RicieptionAuthController {
             new WindowUtils().navigateTo("RicieptionChoiceView", riviewAuthPane);
         }else{
             new Alert(AlertType.ERROR,"Something Went Wrong!").show();
+        }
+        } catch (LoginException e) {
+           e.printStackTrace();
         }
     }
 

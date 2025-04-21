@@ -1,5 +1,6 @@
 package com.example.orm.controller;
 
+import com.example.orm.exception.LoginException;
 import com.example.orm.service.ServiceFactory;
 import com.example.orm.service.custom.AdminService;
 import com.example.orm.utils.WindowUtils;
@@ -38,15 +39,19 @@ public class AdminAuthController {
 
     @FXML
     void gotoChoicesView(ActionEvent event) throws Exception{
-        String email = emailTxt.getText();
-        String password = passwordTxt.getText();
-
-        boolean resp = adminService.authAdmin(email, password);
-
-        if (resp) {
-            new WindowUtils().navigateTo("AdminChoicesView", adminLoginAuthPane);
-        }else{
-            new Alert(AlertType.ERROR, "Something Went Wrong!").show();
+        try {
+            String email = emailTxt.getText();
+            String password = passwordTxt.getText();
+    
+            boolean resp = adminService.authAdmin(email, password);
+    
+            if (resp) {
+                new WindowUtils().navigateTo("AdminChoicesView", adminLoginAuthPane);
+            }else{
+                new Alert(AlertType.ERROR, "Something Went Wrong!").show();
+            }            
+        } catch (LoginException e) {
+            e.printStackTrace();
         }
     }
 }
