@@ -18,6 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -108,6 +109,20 @@ public class PattcientController implements Initializable {
 
     @FXML
     void savePatcient(ActionEvent event) throws Exception {
+
+        String emailReg = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/";
+        String conReg = "^[0-9]{10}$";
+
+        if (!emailTxt.getText().matches(emailReg)) {
+            new Alert(AlertType.ERROR, "Invalid Email Address").show();
+            return;
+        }
+
+        if (!contactTxt.getText().matches(conReg)) {
+            new Alert(AlertType.ERROR, "Invalid Contact Number").show();
+            return;
+        }
+
         try {
             int newPatcientId = patcientService.savePatcien(new PatcentDto(
                     nameTxt.getText(),
@@ -148,6 +163,20 @@ public class PattcientController implements Initializable {
 
     @FXML
     void updatePatcient(ActionEvent event) {
+
+        String emailReg = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/";
+        String conReg = "^[0-9]{10}$";
+
+        if (!emailTxt.getText().matches(emailReg)) {
+            new Alert(AlertType.ERROR, "Invalid Email Address").show();
+            return;
+        }
+
+        if (!contactTxt.getText().matches(conReg)) {
+            new Alert(AlertType.ERROR, "Invalid Contact Number").show();
+            return;
+        }
+
         boolean resp = patcientService.updatePatcient(new PatcentDto(
                 Integer.parseInt(idLbl.getText()),
                 nameTxt.getText(),

@@ -45,6 +45,20 @@ public class AdminController {
 
     @FXML
     void saveAdmin(ActionEvent event) throws Exception {
+
+        String emailReg = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/";
+        String conReg = "^[0-9]{10}$";
+
+        if (!emailTxt.getText().matches(emailReg)) {
+            new Alert(AlertType.ERROR, "Invalid Email Address").show();
+            return;
+        }
+
+        if (!contactTxt.getText().matches(conReg)) {
+            new Alert(AlertType.ERROR, "Invalid Contact Number").show();
+            return;
+        }
+
         boolean resp = adminService.saveAdmin(new AdminDto(
                 nameTxt.getText(), emailTxt.getText(), paddwordTxt.getText(), Integer.parseInt(contactTxt.getText())));
 
