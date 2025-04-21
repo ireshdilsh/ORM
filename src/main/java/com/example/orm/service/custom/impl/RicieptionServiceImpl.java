@@ -17,4 +17,9 @@ public class RicieptionServiceImpl implements RicieptionServce {
                 ricieptionDto.getPassword(), ricieptionDto.getContact()));
     }
 
+    @Override
+    public boolean authLogin(String email, String password) {
+        return ricieptionDao.authLogin(email,password);
+    }
+
 }

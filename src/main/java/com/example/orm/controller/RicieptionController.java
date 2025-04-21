@@ -33,6 +33,12 @@ public class RicieptionController {
 
     @FXML
     private AnchorPane pane;
+
+    private void clearFields(){
+        nameTxt.setText("");
+        emailTxt.setText("");
+        paddwordTxt.setText("");
+    }
     
     @FXML
     void deleteAdmin(ActionEvent event) {
@@ -47,6 +53,7 @@ public class RicieptionController {
 
         if (resp) {
         new Alert(AlertType.INFORMATION, "New Ricieptoin Added Success!").show();
+        clearFields();
         } else {
         new Alert(AlertType.ERROR, "Something Went Wrong!").show();
         }

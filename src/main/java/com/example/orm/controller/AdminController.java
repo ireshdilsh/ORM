@@ -50,9 +50,16 @@ public class AdminController {
 
         if (resp) {
             new Alert(AlertType.INFORMATION, "New Admin Added Success!").show();
+            clearFields();
         } else {
             new Alert(AlertType.ERROR, "Something Went Wrong!").show();
         }
+    }
+
+    private void clearFields(){
+        nameTxt.setText("");
+        emailTxt.setText("");
+        paddwordTxt.setText("");
     }
 
     @FXML

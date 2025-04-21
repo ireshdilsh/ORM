@@ -1,15 +1,21 @@
 package com.example.orm.controller;
 
+import com.example.orm.service.ServiceFactory;
+import com.example.orm.service.ServiceFactory.serviceType;
+import com.example.orm.service.custom.RicieptionServce;
 import com.example.orm.utils.WindowUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class RicieptionAuthController {
+
+    RicieptionServce ricieptionServce = (RicieptionServce) ServiceFactory.getServiceFactory().getService(serviceType.RICIEPTION);
 
     @FXML
     private TextField emailTxt;
@@ -23,12 +29,15 @@ public class RicieptionAuthController {
     @FXML
     void authRicieption(ActionEvent event) throws Exception {
 
-        // if (emailTxt.getText().isEmpty() || passwotdTxt.getText().isEmpty()) {
-        //     new Alert(Alert.AlertType.ERROR,"Cannot be null user input fields").show();
-        // }else {
-        //     new WindowUtils().navigateTo("",riviewAuthPane);
-        // }
-        new WindowUtils().navigateTo("RicieptionChoiceView", riviewAuthPane);
+        String email = emailTxt.getText();
+        String password = passwotdTxt.getText();
+
+        boolean resp = ricieptionServce.authLogin(email,password);
+        if (resp) {
+            new WindowUtils().navigateTo("RicieptionChoiceView", riviewAuthPane);
+        }else{
+            new Alert(AlertType.ERROR,"Something Went Wrong!").show();
+        }
     }
 
     @FXML

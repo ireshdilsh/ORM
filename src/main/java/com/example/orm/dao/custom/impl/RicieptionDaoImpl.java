@@ -58,5 +58,13 @@ public class RicieptionDaoImpl implements RicieptionDao{
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findByPK'");
     }
+    @Override
+    public boolean authLogin(String email, String password) {
+        Session session = configuration.getSessionFactory();
+        return session.createQuery("from ricieption where email=:email and password=:password")
+        .setParameter("email", email)
+        .setParameter("password", password)
+        .list().size() > 0;
+    }
 
 }
