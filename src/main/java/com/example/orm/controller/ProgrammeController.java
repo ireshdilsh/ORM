@@ -84,6 +84,11 @@ public class ProgrammeController implements Initializable{
 
     @FXML
     void saveProgramme(ActionEvent event) throws Exception {
+
+        if (nameTxt.getText().isEmpty() || durationTxt.getText().isEmpty() || feesTxt.getText().isEmpty()) {
+            new Alert(AlertType.ERROR,"Something Went Wrong !").show();
+        }
+
         boolean resp = programmeService.saveProgramme(new ProgrammeDto(
             nameTxt.getText(), durationTxt.getText(), Double.parseDouble(feesTxt.getText())
         ));        

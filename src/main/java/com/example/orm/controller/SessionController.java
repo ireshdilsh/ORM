@@ -91,6 +91,11 @@ public class SessionController implements Initializable{
 
     @FXML
     void saveSession(ActionEvent event) throws Exception{
+
+        if (nameTxt.getText().isEmpty() || startTxt.getText().isEmpty() || endTxt.getText().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR,"Something Went Wrong !").show();
+        }
+
         boolean resp = sessionService.saveSession(new SessionDto(
                 nameTxt.getText(),
                 Integer.parseInt(startTxt.getText()),

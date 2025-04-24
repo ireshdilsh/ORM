@@ -119,6 +119,12 @@ public class PattcientController implements Initializable {
                 "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         String conReg = "^[0-9]{10}$";
 
+        if (emailTxt.getText().isEmpty() || contactTxt.getText().isEmpty() || nameTxt.getText().isEmpty()) {
+            new Alert(AlertType.ERROR,"SomeThing Went Wrong").show();
+        } else {
+            
+        }
+
         if (!emailTxt.getText().matches(emailReg)) {
             new Alert(AlertType.ERROR, "Invalid Email Address").show();
             return;

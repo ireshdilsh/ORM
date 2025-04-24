@@ -51,6 +51,10 @@ public class AdminController {
                     "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         String conReg = "^[0-9]{10}$";
 
+        if (emailTxt.getText().isEmpty() || contactTxt.getText().isEmpty() || nameTxt.getText().isEmpty()) {
+            new Alert(AlertType.ERROR,"Something Went Wrong").show();
+        }
+
         if (!emailTxt.getText().matches(emailReg)) {
             new Alert(AlertType.ERROR, "Invalid Email Address").show();
             return;
