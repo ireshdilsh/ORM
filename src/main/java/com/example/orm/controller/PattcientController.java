@@ -107,9 +107,21 @@ public class PattcientController implements Initializable {
         if (resp) {
             new Alert(Alert.AlertType.INFORMATION, "Patcient deleted").show();
             getAllPatcients();
+            clearFields();
         } else {
             new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
         }
+    }
+
+    private void clearFields(){
+        idLbl.setText("");
+        nameTxt.setText("");
+        emailTxt.setText("");
+        contactTxt.setText("");
+        sessionLbl.setText("");
+        proLbl.setText("");
+        programmeCmb.getSelectionModel().clearSelection();
+        sesssonCmb.getSelectionModel().clearSelection();
     }
 
     @FXML
@@ -150,6 +162,7 @@ public class PattcientController implements Initializable {
                 if (resp) {
                     new Alert(Alert.AlertType.INFORMATION, "Patcient saved").show();
                     getAllPatcients();
+                    clearFields();
                 } else {
                     new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
                 }
@@ -202,6 +215,7 @@ public class PattcientController implements Initializable {
         if (resp) {
             new Alert(Alert.AlertType.INFORMATION, "Patcient Updated").show();
             getAllPatcients();
+            clearFields();
         } else {
             new Alert(Alert.AlertType.ERROR, "Something went wrong").show();
         }
