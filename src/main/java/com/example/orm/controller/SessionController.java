@@ -94,6 +94,7 @@ public class SessionController implements Initializable{
 
         if (nameTxt.getText().isEmpty() || startTxt.getText().isEmpty() || endTxt.getText().isEmpty()) {
             new Alert(Alert.AlertType.ERROR,"Something Went Wrong !").show();
+            return;
         }
 
         boolean resp = sessionService.saveSession(new SessionDto(

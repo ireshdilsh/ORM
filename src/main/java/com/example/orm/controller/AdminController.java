@@ -53,6 +53,7 @@ public class AdminController {
 
         if (emailTxt.getText().isEmpty() || contactTxt.getText().isEmpty() || nameTxt.getText().isEmpty()) {
             new Alert(AlertType.ERROR,"Something Went Wrong").show();
+            return;
         }
 
         if (!emailTxt.getText().matches(emailReg)) {

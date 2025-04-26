@@ -39,6 +39,12 @@ public class AdminAuthController {
 
     @FXML
     void gotoChoicesView(ActionEvent event) throws Exception{
+
+        if (emailTxt.getText().isEmpty() || passwordTxt.getText().isEmpty()) {
+            new Alert(AlertType.ERROR, "Something Went Wrong!").show();
+            return;
+        }
+
         try {
             String email = emailTxt.getText();
             String password = passwordTxt.getText();

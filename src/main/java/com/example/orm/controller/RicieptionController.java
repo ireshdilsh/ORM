@@ -50,6 +50,11 @@ public class RicieptionController {
     @FXML
     void saveAdmin(ActionEvent event) throws Exception {
 
+        if (nameTxt.getText().isEmpty() || emailTxt.getText().isEmpty() || paddwordTxt.getText().isEmpty()|| contactTxt.getText().isEmpty()) {
+            new Alert(AlertType.ERROR, "Something Went Wrong").show();
+            return;
+        }
+
         String emailReg = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@" +
                     "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         String conReg = "^[0-9]{10}$";

@@ -30,6 +30,11 @@ public class RicieptionAuthController {
     @FXML
     void authRicieption(ActionEvent event) throws Exception {
 
+        if (emailTxt.getText().isEmpty() || passwotdTxt.getText().isEmpty()) {
+            new Alert(AlertType.ERROR,"Something Went Wrong!").show();
+            return;
+        }
+
         try {
             String email = emailTxt.getText();
         String password = passwotdTxt.getText();

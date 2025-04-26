@@ -121,8 +121,7 @@ public class PattcientController implements Initializable {
 
         if (emailTxt.getText().isEmpty() || contactTxt.getText().isEmpty() || nameTxt.getText().isEmpty()) {
             new Alert(AlertType.ERROR,"SomeThing Went Wrong").show();
-        } else {
-            
+            return;
         }
 
         if (!emailTxt.getText().matches(emailReg)) {

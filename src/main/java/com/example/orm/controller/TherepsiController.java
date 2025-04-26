@@ -96,6 +96,7 @@ public class TherepsiController implements Initializable{
 
         if (nameTxt.getText().isEmpty() || emailTxt.getText().isEmpty() || contactTxt.getText().isEmpty()) {
             new Alert(AlertType.ERROR,"Something Went Wrong").show();
+            return;
         }
 
         if (!emailTxt.getText().matches(emailReg)) {

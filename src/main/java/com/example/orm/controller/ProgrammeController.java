@@ -87,6 +87,7 @@ public class ProgrammeController implements Initializable{
 
         if (nameTxt.getText().isEmpty() || durationTxt.getText().isEmpty() || feesTxt.getText().isEmpty()) {
             new Alert(AlertType.ERROR,"Something Went Wrong !").show();
+            return;
         }
 
         boolean resp = programmeService.saveProgramme(new ProgrammeDto(
