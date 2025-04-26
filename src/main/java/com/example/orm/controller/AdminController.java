@@ -36,7 +36,7 @@ public class AdminController {
 
     @FXML
     void deleteAdmin(ActionEvent event) {
-        
+        // no need implement this
     }
 
     @FXML
@@ -95,7 +95,7 @@ public class AdminController {
 
     @FXML
     void updateAdmin(ActionEvent event) {
-
+        // no need implement this
     }
 
 }
